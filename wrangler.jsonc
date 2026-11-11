@@ -1,0 +1,9 @@
+// Cloudflare Workers (statische site): skippedapp.app
+// Er is niets te bouwen; Cloudflare uploadt de bestanden uit deze map.
+{
+  "name": "skipped-site",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "."
+  }
+}
