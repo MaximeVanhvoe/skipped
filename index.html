@@ -39,6 +39,9 @@ a{color:inherit}
 .nav a.link:hover{color:#fff}
 .knop{display:inline-block;background:var(--blauw);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;white-space:nowrap}
 .knop:hover{background:#4AA8FF}
+.webknop{display:inline-block;margin-top:28px;color:var(--blauw);text-decoration:none;font-size:19px;font-weight:500;border:1px solid rgba(41,151,255,.5);padding:10px 22px;border-radius:999px}
+.webknop::after{content:" ›"}
+.webknop:hover{background:rgba(41,151,255,.12)}
 
 /* secties */
 section{padding:96px 16px}
@@ -136,6 +139,7 @@ footer .rechts{margin-left:auto}
     <a class="link" href="#inhaalplan">Inhaalplan</a>
     <a class="link" href="#studeren">Studeren</a>
     <a class="link" href="#vrienden">Vrienden</a>
+    <a class="link" href="https://app.skippedapp.app">Op het web</a>
     <a class="link" href="support.html">Support</a>
     <a class="knop" href="https://apps.apple.com/app/id6826845318">Download</a>
   </div>
@@ -235,9 +239,10 @@ footer .rechts{margin-left:auto}
 <section class="donker" id="overal">
   <div class="binnen">
     <div class="kop op">
-      <p class="oog blauw">iPhone, iPad en Mac</p>
+      <p class="oog blauw">iPhone, iPad, Mac en web</p>
       <h2>Overal hetzelfde rooster.</h2>
-      <p class="lead">Via iCloud gaan je vakken, notities en studiesessies mee naar je andere toestellen. Je hoeft geen account te maken.</p>
+      <p class="lead">Via iCloud gaan je vakken, notities en studiesessies mee naar je andere toestellen. Je hoeft geen account te maken. En op een andere computer open je je rooster op het web.</p>
+      <a class="webknop" href="https://app.skippedapp.app">Skipped op het web openen</a>
     </div>
     <img class="ipad op" src="img/ipad-rooster.jpg" width="1800" height="1241" alt="Skipped op de iPad met het weekrooster" loading="lazy">
   </div>
@@ -258,6 +263,7 @@ footer .rechts{margin-left:auto}
   <div class="binnen">
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacybeleid</a>
+    <a href="https://app.skippedapp.app">Skipped op het web</a>
     <a href="https://apps.apple.com/app/id6826845318">App Store</a>
     <span class="rechts">Skipped: Class Tracker</span>
   </div>
