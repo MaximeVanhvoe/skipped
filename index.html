@@ -85,6 +85,7 @@ h2{font-size:clamp(36px,6.4vw,64px);line-height:1.05}
 .telefoons{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,4vw,48px);margin-top:64px}
 .telefoon{width:min(300px,44vw);border-radius:clamp(26px,5.4vw,46px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(5px,1vw,9px) #1D1D1F,0 0 0 clamp(6px,1.15vw,10px) #3A3A3E,0 30px 60px -20px rgba(0,0,0,.45)}
 .telefoon.laag{margin-top:clamp(24px,6vw,64px)}
+.ipad{width:100%;max-width:980px;margin:64px auto 0;border-radius:clamp(14px,2.6vw,30px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(6px,1.2vw,12px) #1D1D1F,0 0 0 clamp(7px,1.35vw,13px) #3A3A3E,0 40px 80px -30px rgba(0,0,0,.55)}
 .mac{width:100%;max-width:980px;margin:64px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -30px rgba(0,0,0,.6)}
 .licht .mac{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 40px 80px -30px rgba(0,0,0,.35)}
 
@@ -166,11 +167,10 @@ footer .rechts{margin-left:auto}
     <div class="kop op">
       <p class="oog blauw">Rooster</p>
       <h2>Je lessen, gewoon uit Agenda.</h2>
-      <p class="lead">Skipped leest je uurrooster uit Apple Agenda. Een gevolgde les kleurt <strong>blauw</strong>, een gemiste krijgt een <strong>rood</strong> pilletje, en de lijn toont waar je dag nu staat.</p>
+      <p class="lead">Skipped leest je uurrooster uit Apple Agenda. Een gevolgde les kleurt <strong>blauw</strong>, een gemiste krijgt een <strong>rood</strong> pilletje, en de lijn toont waar je dag nu staat. Wil je, dan zie je ook de lessen van een vriend in je rooster.</p>
     </div>
     <div class="telefoons op">
       <img class="telefoon" src="img/iphone-rooster.jpg" width="640" height="1391" alt="Weekrooster in Skipped met lessen per dag" loading="lazy">
-      <img class="telefoon laag" src="img/iphone-les.jpg" width="640" height="1391" alt="Een les met notitie en taken" loading="lazy">
     </div>
   </div>
 </section>
@@ -183,10 +183,7 @@ footer .rechts{margin-left:auto}
       <h2>Gemist? Je inhaalplan staat klaar.</h2>
       <p class="lead">Elke les die je mist, komt in <strong>Te doen</strong>, netjes per vak. Vink ze af zodra je ze ingehaald hebt, en zie per vak hoeveel je nog moet.</p>
     </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="img/iphone-tedoen.jpg" width="640" height="1391" alt="Te doen: gemiste lessen per vak" loading="lazy">
-      <img class="telefoon laag" src="img/iphone-voortgang.jpg" width="640" height="1391" alt="Voortgang per vak" loading="lazy">
-    </div>
+    <img class="ipad op" src="img/ipad-voortgang.jpg" width="1800" height="1241" alt="Te doen en voortgang per vak op de iPad" loading="lazy">
   </div>
 </section>
 
@@ -197,7 +194,9 @@ footer .rechts{margin-left:auto}
       <h2>Focus, met de klok mee.</h2>
       <p class="lead">Start een blok voor een vak en Skipped houdt bij hoeveel je deze week studeerde. Wil je, dan blijven afleidende apps dicht tot je blok klaar is.</p>
     </div>
-    <img class="mac op" src="img/mac-studeren.jpg" width="1800" height="1125" alt="Studeermodus met timer en studietijd per week" loading="lazy">
+    <div class="telefoons op">
+      <img class="telefoon" src="img/iphone-studeren.jpg" width="640" height="1391" alt="Studeermodus met timer en studietijd per week" loading="lazy">
+    </div>
     <div class="feiten op">
       <div class="feit"><b>Jouw ritme</b><span>Vrij, pomodoro of een vaste tijd.</span></div>
       <div class="feit"><b>Altijd in zicht</b><span>De timer loopt mee op je toegangsscherm en in het Dynamic Island.</span></div>
@@ -213,19 +212,22 @@ footer .rechts{margin-left:auto}
       <h2>Samen hou je het vol.</h2>
       <p class="lead">Zie wie er nu aan het studeren is en hoeveel uur je vrienden maakten. Start een groep voor de examens en kijk wie het meest studeert. <strong>Jij kiest</strong> per vriend en per groep wat je deelt.</p>
     </div>
-    <img class="mac op" src="img/mac-vrienden.jpg" width="1800" height="862" alt="Vrienden en groepen in Skipped, met voorbeeldvrienden" loading="lazy">
+    <div class="telefoons op">
+      <img class="telefoon" src="img/iphone-vrienden.jpg" width="640" height="1391" alt="Vrienden in Skipped, met voorbeeldvrienden" loading="lazy">
+    </div>
   </div>
 </section>
 
-<section class="licht" id="widget">
+<section class="licht" id="meer">
   <div class="binnen">
     <div class="kop op">
-      <p class="oog blauw">Widgets</p>
-      <h2>Je dag in één oogopslag.</h2>
-      <p class="lead">Op je beginscherm zie je je volgende les en wat je nog moet inhalen. Afvinken kan meteen in de widget.</p>
+      <p class="oog blauw">En nog meer</p>
+      <h2>Alles wat je nodig hebt.</h2>
     </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="img/iphone-widgets.jpg" width="640" height="1391" alt="Widgets van Skipped op het beginscherm" loading="lazy">
+    <div class="feiten op">
+      <div class="feit"><b>Widgets</b><span>Je volgende les en wat je nog moet inhalen, op je beginscherm. Afvinken kan meteen in de widget.</span></div>
+      <div class="feit"><b>Notities en taken</b><span>Bij elke les een notitie en taken, met een datum als je wilt.</span></div>
+      <div class="feit"><b>Focus</b><span>Koppel de studeermodus aan een Focus via Opdrachten.</span></div>
     </div>
   </div>
 </section>
@@ -237,7 +239,7 @@ footer .rechts{margin-left:auto}
       <h2>Overal hetzelfde rooster.</h2>
       <p class="lead">Via iCloud gaan je vakken, notities en studiesessies mee naar je andere toestellen. Je hoeft geen account te maken.</p>
     </div>
-    <img class="mac op" src="img/mac-rooster.jpg" width="1800" height="1125" alt="Skipped op de Mac met het weekrooster" loading="lazy">
+    <img class="ipad op" src="img/ipad-rooster.jpg" width="1800" height="1241" alt="Skipped op de iPad met het weekrooster" loading="lazy">
   </div>
 </section>
 
