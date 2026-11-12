@@ -5,5 +5,7 @@
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "."
-  }
+  },
+  // Nodig voor de preview-builds van PR's (npx wrangler preview).
+  "previews": {}
 }
