@@ -6,6 +6,9 @@
 <title>Skipped: Class Tracker · hou bij welke lessen je mist</title>
 <meta name="description" content="Skipped: Class Tracker is een gratis class tracker voor iPhone, iPad en Mac. Je rooster uit Apple Agenda, gemiste lessen en taken in Te doen, een studeermodus en studeren met vrienden.">
 <link rel="canonical" href="https://skippedapp.app/">
+<link rel="alternate" hreflang="nl" href="https://skippedapp.app/">
+<link rel="alternate" hreflang="en" href="https://skippedapp.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://skippedapp.app/en/">
 <meta name="apple-itunes-app" content="app-id=6826845318, affiliate-data=pt=129678265&amp;ct=website%20link">
 <meta name="theme-color" content="#101014">
 <meta property="og:site_name" content="Skipped">
@@ -44,6 +47,70 @@
       "sameAs": "https://apps.apple.com/app/id6826845318",
       "inLanguage": ["nl", "en"],
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat is Skipped?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skipped: Class Tracker is een gratis app voor iPhone, iPad en Mac die bijhoudt welke lessen je gevolgd en gemist hebt. Je rooster komt uit Apple Agenda, en alles wat je nog moet inhalen staat in Te doen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe hou ik bij welke lessen ik gemist heb?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vink in Skipped elke les af als gevolgd of gemist. Een gemiste les krijgt een rood pilletje en komt in Te doen, netjes per vak, tot je ze ingehaald hebt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werkt Skipped met het uurrooster van mijn unief of hogeschool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, zolang je rooster in Apple Agenda staat, bijvoorbeeld via een agenda-abonnement (iCal-link) van je school. Skipped leest je lessen daaruit, je hoeft niets over te typen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Skipped gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Skipped is gratis voor iPhone, iPad en Mac, en je hoeft geen account te maken. Je gegevens gaan via iCloud mee naar je andere toestellen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik studeren met een timer en afleidende apps blokkeren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. In de studeermodus kies je vrij, pomodoro of een vaste tijd. De timer loopt mee op je toegangsscherm en in het Dynamic Island, en op iPhone en iPad kun je apps blokkeren via Schermtijd."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik samen met vrienden studeren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Je ziet wie er nu studeert en hoeveel uur je vrienden maakten, en je kunt een groep starten voor de examens. Je kiest zelf per vriend en per groep wat je deelt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heb ik een iPhone nodig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De app is er voor iPhone, iPad en Mac. Op een andere computer open je je rooster via Skipped op het web."
+      }
     }
   ]
 }
@@ -152,6 +219,16 @@ footer a{color:#C7C7CC;text-decoration:none}
 footer a:hover{color:#fff;text-decoration:underline}
 footer .rechts{margin-left:auto}
 
+/* vragen */
+.vragen{max-width:760px;margin:40px auto 0;display:grid;gap:12px}
+.vraag{border-radius:18px;padding:0 22px;background:var(--wit)}
+@media (prefers-color-scheme:dark){.vraag{background:#2C2C2E}}
+.vraag summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em;position:relative}
+.vraag summary::-webkit-details-marker{display:none}
+.vraag summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;font-weight:400;color:var(--licht-accent)}
+.vraag[open] summary::after{content:"\2212"}
+.vraag p{margin:0 0 18px;font-size:16px;color:var(--licht-ink2)}
+
 /* rustig opduiken */
 .js .op{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .op.zicht{opacity:1;transform:none}
@@ -178,6 +255,7 @@ footer .rechts{margin-left:auto}
     <a class="link" href="#vrienden">Vrienden</a>
     <a class="link" href="https://app.skippedapp.app">Op het web</a>
     <a class="link" href="support.html">Support</a>
+    <a class="link" href="/en/" hreflang="en" lang="en">EN</a>
     <a class="knop" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">Download</a>
   </div>
 </header>
@@ -292,6 +370,24 @@ footer .rechts{margin-left:auto}
   </div>
 </section>
 
+<section class="licht" id="vragen">
+  <div class="binnen">
+    <div class="kop op">
+      <p class="oog blauw">Vragen</p>
+      <h2>Vaak gesteld.</h2>
+    </div>
+    <div class="vragen op">
+      <details class="vraag"><summary>Wat is Skipped?</summary><p>Skipped: Class Tracker is een gratis app voor iPhone, iPad en Mac die bijhoudt welke lessen je gevolgd en gemist hebt. Je rooster komt uit Apple Agenda, en alles wat je nog moet inhalen staat in Te doen.</p></details>
+      <details class="vraag"><summary>Hoe hou ik bij welke lessen ik gemist heb?</summary><p>Vink in Skipped elke les af als gevolgd of gemist. Een gemiste les krijgt een rood pilletje en komt in Te doen, netjes per vak, tot je ze ingehaald hebt.</p></details>
+      <details class="vraag"><summary>Werkt Skipped met het uurrooster van mijn unief of hogeschool?</summary><p>Ja, zolang je rooster in Apple Agenda staat, bijvoorbeeld via een agenda-abonnement (iCal-link) van je school. Skipped leest je lessen daaruit, je hoeft niets over te typen.</p></details>
+      <details class="vraag"><summary>Is Skipped gratis?</summary><p>Ja. Skipped is gratis voor iPhone, iPad en Mac, en je hoeft geen account te maken. Je gegevens gaan via iCloud mee naar je andere toestellen.</p></details>
+      <details class="vraag"><summary>Kan ik studeren met een timer en afleidende apps blokkeren?</summary><p>Ja. In de studeermodus kies je vrij, pomodoro of een vaste tijd. De timer loopt mee op je toegangsscherm en in het Dynamic Island, en op iPhone en iPad kun je apps blokkeren via Schermtijd.</p></details>
+      <details class="vraag"><summary>Kan ik samen met vrienden studeren?</summary><p>Ja. Je ziet wie er nu studeert en hoeveel uur je vrienden maakten, en je kunt een groep starten voor de examens. Je kiest zelf per vriend en per groep wat je deelt.</p></details>
+      <details class="vraag"><summary>Heb ik een iPhone nodig?</summary><p>De app is er voor iPhone, iPad en Mac. Op een andere computer open je je rooster via Skipped op het web.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="donker slot">
   <div class="op">
     <img class="app-icoon" src="img/icoon-groot.png" width="180" height="180" alt="" loading="lazy">
@@ -309,6 +405,7 @@ footer .rechts{margin-left:auto}
     <a href="privacy.html">Privacybeleid</a>
     <a href="voorwaarden.html">Voorwaarden</a>
     <a href="https://app.skippedapp.app">Skipped op het web</a>
+    <a href="/en/" hreflang="en" lang="en">English</a>
     <a href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">App Store</a>
     <span class="rechts">Skipped: Class Tracker</span>
   </div>
