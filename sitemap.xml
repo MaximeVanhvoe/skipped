@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://skippedapp.app/</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://skippedapp.app/en/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/examenplanner/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/en/exam-planner/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/lessen-bijhouden/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/en/class-attendance-tracker/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/pomodoro-timer/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://skippedapp.app/en/pomodoro-timer/</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://skippedapp.app/support</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://skippedapp.app/privacy</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://skippedapp.app/voorwaarden</loc><lastmod>2026-11-14</lastmod></url>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pomodoro timer that blocks distracting apps · Skipped: Class Tracker</title>
+<meta name="description" content="Study with a pomodoro timer, a fixed time or free, per course. Block distracting apps with Screen Time and see your study time per week. Free for iPhone, iPad and Mac.">
+<link rel="canonical" href="https://skippedapp.app/en/pomodoro-timer/">
+<link rel="alternate" hreflang="en" href="https://skippedapp.app/en/pomodoro-timer/">
+<link rel="alternate" hreflang="nl" href="https://skippedapp.app/pomodoro-timer/">
+<link rel="alternate" hreflang="x-default" href="https://skippedapp.app/en/pomodoro-timer/">
+<meta name="apple-itunes-app" content="app-id=6826845318, affiliate-data=pt=129678265&amp;ct=website%20link">
+<meta name="theme-color" content="#101014">
+<meta property="og:site_name" content="Skipped">
+<meta property="og:title" content="A pomodoro timer that closes your apps.">
+<meta property="og:description" content="Study with a pomodoro timer, a fixed time or free, per course. Block distracting apps with Screen Time and see your study time per week. Free for iPhone, iPad and Mac.">
+<meta property="og:image" content="https://skippedapp.app/img/banner.jpg">
+<meta property="og:url" content="https://skippedapp.app/en/pomodoro-timer/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is there a free pomodoro app that blocks apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Skipped's study mode is free and blocks distracting apps with Screen Time on iPhone and iPad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do blocked apps come back on their own?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, at your break and at the end of your session, even when Skipped is closed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I set the length of a pomodoro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Choose pomodoro, a fixed time or free, and adjust your break and extra time."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Skipped",
+        "item": "https://skippedapp.app/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Study mode",
+        "item": "https://skippedapp.app/en/pomodoro-timer/"
+      }
+    ]
+  }
+]
+</script>
+<link rel="icon" href="/img/icoon.png">
+<link rel="apple-touch-icon" href="/img/icoon.png">
+<style>
+:root{
+  --nacht:#101014; --nacht2:#17171C; --ink:#1D1D1F; --ink2:#6E6E73;
+  --titanium:#E7E5E1; --wit:#fff;
+  --blauw:#2997FF; --blauw-licht:#0066CC; --rood:#FF3B4E; --neon:#3DF5A0; --grijs:#3A3A40;
+  --licht-bg:var(--titanium); --licht-ink:var(--ink); --licht-ink2:var(--ink2); --licht-accent:var(--blauw-licht);
+}
+@media (prefers-color-scheme:dark){
+  :root{--licht-bg:#1C1C1F; --licht-ink:#F5F5F7; --licht-ink2:#A1A1A6; --licht-accent:var(--blauw)}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--nacht);color:#F5F5F7;font:17px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit}
+
+/* navigatie */
+.nav{position:sticky;top:0;z-index:10;background:rgba(16,16,20,.78);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-in{max-width:1024px;margin:0 auto;padding:0 16px;height:52px;display:flex;align-items:center;gap:20px}
+.merk{font:700 21px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.merk img{border-radius:6px}
+.nav a.link{font-size:13px;color:#C7C7CC;text-decoration:none}
+.nav a.link:hover{color:#fff}
+.knop{display:inline-block;background:var(--blauw);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.knop:hover{background:#4AA8FF}
+.webknop{display:inline-block;margin-top:28px;color:var(--blauw);text-decoration:none;font-size:19px;font-weight:500;border:1px solid rgba(41,151,255,.5);padding:10px 22px;border-radius:999px}
+.webknop::after{content:" ›"}
+.webknop:hover{background:rgba(41,151,255,.12)}
+
+/* secties */
+section{padding:96px 16px}
+.donker{background:var(--nacht);color:#F5F5F7}
+.licht{background:var(--licht-bg);color:var(--licht-ink)}
+.binnen{max-width:1024px;margin:0 auto}
+.kop{text-align:center;max-width:760px;margin:0 auto}
+.oog{font-size:19px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
+h1,h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;font-weight:700;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(48px,9vw,96px);line-height:1.02}
+h2{font-size:clamp(36px,6.4vw,64px);line-height:1.05}
+.lead{font-size:clamp(19px,2.4vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;margin:22px auto 0;max-width:680px}
+.donker .lead{color:#A1A1A6}
+.licht .lead{color:var(--licht-ink2)}
+.lead strong{color:inherit;font-weight:600}
+.donker .lead strong{color:#F5F5F7}
+.licht .lead strong{color:var(--licht-ink)}
+
+/* hero */
+.hero{padding:0 0 88px;text-align:center}
+.banner{width:100%;max-width:1600px;margin:0 auto;aspect-ratio:3840/1646;object-fit:cover}
+.hero .kop{padding:0 16px;margin-top:-1vw}
+.hero h1 .rood{color:var(--rood)}
+.h1-merk{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6;margin:0 0 10px}
+.badge{display:inline-block;margin-top:36px;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge img{height:56px;width:auto}
+.klein{font-size:14px;color:#86868B;margin:14px 0 0}
+
+/* spot */
+.spot{padding-top:0}
+.video{max-width:980px;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.video video{width:100%;aspect-ratio:16/9;background:#000}
+.onder{text-align:center;font-size:14px;color:#86868B;margin:16px 0 0}
+
+/* pilletjes */
+.pillen{display:flex;justify-content:center;gap:8px;margin:0 0 28px}
+.pillen i{width:12px;height:36px;border-radius:999px;background:var(--blauw)}
+.pillen i.r{background:var(--rood)}
+.pillen i.g{background:var(--grijs)}
+.licht .pillen i.g{background:#C9C6C0}
+@media (prefers-color-scheme:dark){.licht .pillen i.g{background:var(--grijs)}}
+
+/* toestellen */
+.telefoons{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,4vw,48px);margin-top:64px}
+.telefoon{width:min(300px,44vw);border-radius:clamp(26px,5.4vw,46px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(5px,1vw,9px) #1D1D1F,0 0 0 clamp(6px,1.15vw,10px) #3A3A3E,0 30px 60px -20px rgba(0,0,0,.45)}
+.telefoon.laag{margin-top:clamp(24px,6vw,64px)}
+.ipad{width:100%;max-width:980px;margin:64px auto 0;border-radius:clamp(14px,2.6vw,30px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(6px,1.2vw,12px) #1D1D1F,0 0 0 clamp(7px,1.35vw,13px) #3A3A3E,0 40px 80px -30px rgba(0,0,0,.55)}
+.mac{width:100%;max-width:980px;margin:64px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -30px rgba(0,0,0,.6)}
+.licht .mac{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 40px 80px -30px rgba(0,0,0,.35)}
+
+/* feiten */
+.feiten{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:48px auto 0}
+.feit{border-radius:22px;padding:24px}
+.licht .feit{background:var(--wit)}
+@media (prefers-color-scheme:dark){.licht .feit{background:#2C2C2E}}
+.donker .feit{background:var(--nacht2)}
+.feit b{display:block;font-size:19px;letter-spacing:-.01em;margin-bottom:4px}
+.feit span{font-size:15px;color:var(--licht-ink2)}
+.donker .feit span{color:#A1A1A6}
+
+.blauw{color:var(--blauw)} .licht .blauw{color:var(--licht-accent)}
+.rood{color:var(--rood)}
+.neon{color:var(--neon)}
+
+/* slot */
+.slot{text-align:center;padding:120px 16px}
+.app-icoon{width:clamp(112px,16vw,160px);margin:0 auto 28px;border-radius:22.5%;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+footer{background:var(--nacht);border-top:1px solid rgba(255,255,255,.08);padding:28px 16px 40px;font-size:13px;color:#86868B}
+footer .binnen{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+footer a{color:#C7C7CC;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .rechts{margin-left:auto}
+
+/* vragen */
+.vragen{max-width:760px;margin:40px auto 0;display:grid;gap:12px}
+.vraag{border-radius:18px;padding:0 22px;background:var(--wit)}
+@media (prefers-color-scheme:dark){.vraag{background:#2C2C2E}}
+.vraag summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em;position:relative}
+.vraag summary::-webkit-details-marker{display:none}
+.vraag summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;font-weight:400;color:var(--licht-accent)}
+.vraag[open] summary::after{content:"\2212"}
+.vraag p{margin:0 0 18px;font-size:16px;color:var(--licht-ink2)}
+
+/* rustig opduiken */
+.js .op{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .op.zicht{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .op{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:734px){
+  section{padding:72px 16px}
+  .hero{padding:0 0 64px}
+  .nav a.link{display:none}
+  .feiten{grid-template-columns:1fr}
+  .video{border-radius:18px}
+  .mac{border-radius:8px}
+  footer .rechts{margin-left:0;width:100%}
+}
+</style>
+<style>.hero.onderwerp{padding:96px 16px 88px} .meer-links{text-align:center;margin-top:8px} .meer-links .webknop{margin:12px 6px 0;font-size:17px}</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="merk" href="/en/"><img src="/img/icoon.png" width="24" height="24" alt="">Skipped</a>
+    <a class="link" href="https://app.skippedapp.app">On the web</a>
+    <a class="link" href="/support.html#en">Support</a>
+    <a class="link" href="https://skippedapp.app/pomodoro-timer/" hreflang="nl" lang="nl">NL</a>
+    <a class="knop" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">Download</a>
+  </div>
+</header>
+
+<main>
+
+<section class="donker hero onderwerp">
+  <div class="kop">
+    <h1><span class="h1-merk">Study mode · Skipped: Class Tracker</span>A pomodoro timer that closes your apps.</h1>
+    <p class="lead">Start a session for a course, choose pomodoro, a fixed time or free, and keep distracting apps closed until your break.</p>
+    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download on the App Store"></a>
+    <p class="klein">Free for iPhone, iPad and Mac.</p>
+  </div>
+  <div class="telefoons op">
+    <img class="telefoon" src="/img/iphone-studeren.jpg" width="640" height="1391" alt="Study mode in Skipped with timer and study time per week" loading="lazy">
+  </div>
+</section>
+
+<section class="licht">
+  <div class="binnen">
+    <div class="kop op">
+      <p class="oog blauw">Timer</p>
+      <h2>Pomodoro, fixed or free.</h2>
+      <p class="lead">Pick your rhythm and your break, take extra time or start another round with one tap. The timer runs on your Lock Screen and in the Dynamic Island.</p>
+    </div>
+  </div>
+</section>
+
+<section class="donker">
+  <div class="binnen">
+    <div class="kop op">
+      <p class="oog blauw">Block apps</p>
+      <h2>No distractions during your session.</h2>
+      <p class="lead">Choose which apps to close with Screen Time, on iPhone and iPad. They come back on their own at your break and at the end, even when Skipped is closed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="licht">
+  <div class="binnen">
+    <div class="kop op">
+      <p class="oog blauw">Progress</p>
+      <h2>See how much you studied.</h2>
+      <p class="lead">Skipped tracks your study time per day and per week, per course, with a weekly goal. Studying with friends? See who is at it right now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="donker">
+  <div class="binnen">
+    <div class="feiten op"><div class="feit"><b>Shortcuts and Focus</b><span>Start or stop a session from Shortcuts or a Focus.</span></div><div class="feit"><b>Per course</b><span>Every minute counts toward the right course.</span></div><div class="feit"><b>Free</b><span>No subscription, no account.</span></div></div>
+  </div>
+</section>
+
+<section class="licht">
+  <div class="binnen">
+    <div class="kop op">
+      <p class="oog blauw">Questions</p>
+      <h2>Frequently asked.</h2>
+    </div>
+    <div class="vragen op">
+      <details class="vraag"><summary>Is there a free pomodoro app that blocks apps?</summary><p>Yes. Skipped&#x27;s study mode is free and blocks distracting apps with Screen Time on iPhone and iPad.</p></details>
+      <details class="vraag"><summary>Do blocked apps come back on their own?</summary><p>Yes, at your break and at the end of your session, even when Skipped is closed.</p></details>
+      <details class="vraag"><summary>Can I set the length of a pomodoro?</summary><p>Yes. Choose pomodoro, a fixed time or free, and adjust your break and extra time.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="donker slot">
+  <div class="op">
+    <img class="app-icoon" src="/img/icoon-groot.png" width="180" height="180" alt="" loading="lazy">
+    <h2>Skipped</h2>
+    <p class="lead">Every class counts. Free for iPhone, iPad and Mac.</p>
+    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download on the App Store"></a>
+    <div class="meer-links"><a class="webknop" href="/en/exam-planner/">Exam planner</a> <a class="webknop" href="/en/class-attendance-tracker/">Class tracker</a> <a class="webknop" href="/en/">See all features</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="binnen">
+    <a href="/support.html#en">Support</a>
+    <a href="/privacy.html#en">Privacy Policy</a>
+    <a href="/voorwaarden.html#en">Terms of Use</a>
+    <a href="https://app.skippedapp.app">Skipped on the web</a>
+    <a href="https://skippedapp.app/pomodoro-timer/" hreflang="nl" lang="nl">Nederlands</a>
+    <span class="rechts">Skipped: Class Tracker</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('zicht'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.op').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
