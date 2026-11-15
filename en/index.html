@@ -117,286 +117,329 @@
 </script>
 <link rel="icon" href="/img/icoon.png">
 <link rel="apple-touch-icon" href="/img/icoon.png">
+<script>document.documentElement.className+=' js'</script>
 <style>
+
+/* Layout: de huidige site-start (banner, kop, badge), drie toestellen met drie functies, grote spot, daarna één tabblok met telkens twee iPhone-beelden. Kleuren en vormen van de huidige site. */
 :root{
-  --nacht:#101014; --nacht2:#17171C; --ink:#1D1D1F; --ink2:#6E6E73;
-  --titanium:#E7E5E1; --wit:#fff;
+  --nacht:#101014; --nacht2:#17171C; --ink:#1D1D1F; --ink2:#6E6E73; --titanium:#E7E5E1; --wit:#fff;
   --blauw:#2997FF; --blauw-licht:#0066CC; --rood:#FF3B4E; --neon:#3DF5A0; --grijs:#3A3A40;
-  --licht-bg:var(--titanium); --licht-ink:var(--ink); --licht-ink2:var(--ink2); --licht-accent:var(--blauw-licht);
+  --licht-bg:var(--titanium); --licht-ink:var(--ink); --licht-ink2:var(--ink2); --licht-accent:var(--blauw-licht); --kaart:#fff; --track:#D5D2CC;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+  --kop:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Inter,Arial,sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{--licht-bg:#1C1C1F; --licht-ink:#F5F5F7; --licht-ink2:#A1A1A6; --licht-accent:var(--blauw)}
-}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--licht-bg:#1C1C1F;--licht-ink:#F5F5F7;--licht-ink2:#A1A1A6;--licht-accent:var(--blauw);--kaart:#2C2C2E;--track:#3A3A3E;color-scheme:dark}}
+:root[data-theme="dark"]{--licht-bg:#1C1C1F;--licht-ink:#F5F5F7;--licht-ink2:#A1A1A6;--licht-accent:var(--blauw);--kaart:#2C2C2E;--track:#3A3A3E;color-scheme:dark}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--nacht);color:#F5F5F7;font:17px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--nacht);color:#F5F5F7;font:17px/1.5 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%;height:auto}
 a{color:inherit}
+h1,h2,h3{font-family:var(--kop);font-weight:700;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.binnen{max-width:1024px;margin:0 auto}
 
-/* navigatie */
-.nav{position:sticky;top:0;z-index:10;background:rgba(16,16,20,.78);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-in{max-width:1024px;margin:0 auto;padding:0 16px;height:52px;display:flex;align-items:center;gap:20px}
-.merk{font:700 21px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
-.merk img{border-radius:6px}
+/* nav (zoals nu) */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--nacht)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(16,16,20,.78);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-in{max-width:1024px;margin:0 auto;height:52px;display:flex;align-items:center;gap:20px}
+.merk{font:700 21px/1 var(--kop);letter-spacing:-.02em;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.merk img{border-radius:6px;width:26px;height:26px}
 .nav a.link{font-size:13px;color:#C7C7CC;text-decoration:none}
 .nav a.link:hover{color:#fff}
 .knop{display:inline-block;background:var(--blauw);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;white-space:nowrap}
 .knop:hover{background:#4AA8FF}
-.webknop{display:inline-block;margin-top:28px;color:var(--blauw);text-decoration:none;font-size:19px;font-weight:500;border:1px solid rgba(41,151,255,.5);padding:10px 22px;border-radius:999px}
-.webknop::after{content:" ›"}
-.webknop:hover{background:rgba(41,151,255,.12)}
 
-/* secties */
-section{padding:96px 16px}
-.donker{background:var(--nacht);color:#F5F5F7}
-#vrienden{border-top:1px solid rgba(255,255,255,.08)}
+section{padding:88px 0}
 .licht{background:var(--licht-bg);color:var(--licht-ink)}
-.binnen{max-width:1024px;margin:0 auto}
+.donker{background:var(--nacht);color:#F5F5F7}
 .kop{text-align:center;max-width:760px;margin:0 auto}
 .oog{font-size:19px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
-h1,h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;font-weight:700;letter-spacing:-.025em;margin:0}
-h1{font-size:clamp(48px,9vw,96px);line-height:1.02}
-h2{font-size:clamp(36px,6.4vw,64px);line-height:1.05}
-.lead{font-size:clamp(19px,2.4vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;margin:22px auto 0;max-width:680px}
-.donker .lead{color:#A1A1A6}
-.licht .lead{color:var(--licht-ink2)}
-.lead strong{color:inherit;font-weight:600}
-.donker .lead strong{color:#F5F5F7}
-.licht .lead strong{color:var(--licht-ink)}
+.blauw{color:var(--blauw)} .licht .blauw{color:var(--licht-accent)} .neon{color:var(--neon)}
+h2{font-size:clamp(36px,6vw,60px);line-height:1.05}
+.lead{font-size:clamp(19px,2.4vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;margin:20px auto 0;max-width:680px;color:#A1A1A6}
+.lead strong{color:#F5F5F7;font-weight:600}
 
-/* hero */
-.hero{padding:0 0 88px;text-align:center}
-.banner{width:100%;max-width:1600px;margin:0 auto;aspect-ratio:3840/1646;object-fit:cover}
-.hero .kop{padding:0 16px;margin-top:-1vw}
-.hero h1 .rood{color:var(--rood)}
+/* hero: de start van nu */
+.hero{padding:0 0 56px;text-align:center}
+.banner{width:100%;max-width:1600px;margin:0 auto;aspect-ratio:3840/1300;object-fit:cover}
+.hero .kop{margin-top:calc(min(100vw,1600px) * -.112)}
+.hero h1{font-size:clamp(17px,1.9vw,23px);font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .h1-merk{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6;margin:0 0 10px}
-.badge{display:inline-block;margin-top:36px;transition:opacity .2s}
+.badge{display:inline-block;margin-top:30px;transition:opacity .2s}
 .badge:hover{opacity:.85}
 .badge img{height:56px;width:auto}
-.klein{font-size:14px;color:#86868B;margin:14px 0 0}
-
-/* spot */
-.spot{padding-top:0}
-.video{max-width:980px;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
-.video video{width:100%;aspect-ratio:16/9;background:#000}
-.onder{text-align:center;font-size:14px;color:#86868B;margin:16px 0 0}
-
-/* pilletjes */
-.pillen{display:flex;justify-content:center;gap:8px;margin:0 0 28px}
-.pillen i{width:12px;height:36px;border-radius:999px;background:var(--blauw)}
-.pillen i.r{background:var(--rood)}
-.pillen i.g{background:var(--grijs)}
-.licht .pillen i.g{background:#C9C6C0}
-@media (prefers-color-scheme:dark){.licht .pillen i.g{background:var(--grijs)}}
+.klein{font-size:14px;color:#86868B;margin:12px 0 0}
 
 /* toestellen */
-.telefoons{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,4vw,48px);margin-top:64px}
-.telefoon{width:min(300px,44vw);border-radius:clamp(26px,5.4vw,46px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(5px,1vw,9px) #1D1D1F,0 0 0 clamp(6px,1.15vw,10px) #3A3A3E,0 30px 60px -20px rgba(0,0,0,.45)}
-.telefoon.laag{margin-top:clamp(24px,6vw,64px)}
-.ipad{width:100%;max-width:980px;margin:64px auto 0;border-radius:clamp(14px,2.6vw,30px);overflow:hidden;background:#000;box-shadow:0 0 0 clamp(6px,1.2vw,12px) #1D1D1F,0 0 0 clamp(7px,1.35vw,13px) #3A3A3E,0 40px 80px -30px rgba(0,0,0,.55)}
-.mac{width:100%;max-width:980px;margin:64px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -30px rgba(0,0,0,.6)}
-.licht .mac{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 40px 80px -30px rgba(0,0,0,.35)}
+/* toestelkaders: titanium rand, zwarte bezel, Dynamic Island, camera, MacBook-voet */
+.dev{display:block;position:relative;background:#050506}
+.dev img{width:100%;display:block}
+.tel{padding:0;border-radius:15%/7%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tel img{width:95.8%;margin:2.1%;border-radius:13.4%/6.2%}
+.tel::after{content:"";position:absolute;top:2.25%;left:50%;width:28.8%;aspect-ratio:3.38;transform:translateX(-50%);background:#000;border-radius:999px}
+.tab{padding:0;border-radius:2.9%/3.9%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tab img{width:97.4%;margin:1.3%;border-radius:1.8%/2.4%}
+.tab::after{content:"";position:absolute;top:.6%;left:50%;width:.45%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:#1a1d26}
+.mac{padding:1.3% 1.3% 2.4%;border-radius:2.4% 2.4% 0 0/3.8% 3.8% 0 0;box-shadow:inset 0 0 0 1px #4a4a4f,inset 0 0 0 2px #151517;margin-bottom:3.4%}
+.mac img{border-radius:.5%}
+.mac::after{content:"";position:absolute;top:100%;left:-6.5%;right:-6.5%;aspect-ratio:46;background:linear-gradient(to right,transparent 42%,rgba(0,0,0,.25) 42.6%,rgba(0,0,0,.25) 57.4%,transparent 58%) top/100% 42% no-repeat,linear-gradient(#ececee,#c9c9cc 50%,#8f8f93);border-radius:3px 3px 48% 48%/3px 3px 100% 100%;box-shadow:0 18px 30px -16px rgba(0,0,0,.6)}
+.trio{position:relative;max-width:940px;margin:52px auto 0;padding:0 0 3%}
+.trio .mac{width:72%;margin:0 auto 3.4%}
+.trio .tab{position:absolute;left:0;bottom:0;width:36%}
+.trio .tel{position:absolute;right:2%;bottom:0;width:14.5%}
+/* kleine toestellen: rand evenredig dunner, zodat ze er net zo uitzien als de grote */
 
-/* feiten */
-.feiten{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:48px auto 0}
-.feit{border-radius:22px;padding:24px}
-.licht .feit{background:var(--wit)}
-@media (prefers-color-scheme:dark){.licht .feit{background:#2C2C2E}}
-.donker .feit{background:var(--nacht2)}
-.feit b{display:block;font-size:19px;letter-spacing:-.01em;margin-bottom:4px}
-.feit span{font-size:15px;color:var(--licht-ink2)}
-.donker .feit span{color:#A1A1A6}
 
-.blauw{color:var(--blauw)} .licht .blauw{color:var(--licht-accent)}
-.rood{color:var(--rood)}
-.neon{color:var(--neon)}
+/* spot */
+.spot{padding:24px 0 96px}
+.spot .kop{margin-bottom:36px}
+.video{position:relative;max-width:1024px;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.video video{width:100%;aspect-ratio:16/9;background:#000;object-fit:cover}
+.speel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:0;background:linear-gradient(rgba(16,16,20,.25),rgba(16,16,20,.55));color:#fff;font:600 19px var(--font);cursor:pointer}
+.speel i{width:84px;height:84px;border-radius:50%;background:var(--blauw);display:grid;place-items:center;box-shadow:0 10px 40px rgba(41,151,255,.45);transition:transform .2s}
+.speel:hover i{transform:scale(1.06)}
+.speel svg{width:30px;height:30px;fill:#fff;margin-left:4px}
+.speel small{font-weight:500;font-size:14px;color:#D1D1D6}
+.video.speelt .speel{display:none}
+.video:not(.speelt) video{pointer-events:none}
 
-/* slot */
-.slot{text-align:center;padding:120px 16px}
-.app-icoon{width:clamp(112px,16vw,160px);margin:0 auto 28px;border-radius:22.5%;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
-footer{background:var(--nacht);border-top:1px solid rgba(255,255,255,.08);padding:28px 16px 40px;font-size:13px;color:#86868B}
-footer .binnen{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
-footer a{color:#C7C7CC;text-decoration:none}
-footer a:hover{color:#fff;text-decoration:underline}
-footer .rechts{margin-left:auto}
+/* tabs: kleur en vorm van de pilletjes uit de banner */
+.pillen{display:flex;justify-content:center;gap:8px;margin:0 0 24px}
+.pillen i{width:12px;height:36px;border-radius:999px;background:var(--blauw)}
+.pillen i.r{background:var(--rood)} .pillen i.g{background:#C9C6C0}
+@media (prefers-color-scheme:dark){.pillen i.g{background:var(--grijs)}}
+.tabs{display:flex;gap:6px;margin:30px auto 0;padding:5px;background:var(--track);border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;font:600 15px var(--font);color:var(--licht-ink2);background:none;border:0;padding:9px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.tabs button::before{content:"";width:6px;height:16px;border-radius:99px;background:currentColor;opacity:.35}
+.tabs button[aria-selected="true"]{background:var(--blauw-licht);color:#fff}
+.tabs button[aria-selected="true"]::before{background:#fff;opacity:1}
+.tabs button[data-kleur="rood"][aria-selected="true"]::before{background:#FFD0D4}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--blauw);outline-offset:3px}
+
+.paneel{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);gap:56px;align-items:center;margin-top:48px}
+.paneel .t{min-width:0}
+.paneel h3{font-size:clamp(28px,3.6vw,42px);line-height:1.07}
+.paneel p{color:var(--licht-ink2);font-size:19px;margin:12px 0 0;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:22px 0 0}
+.chips li{font-size:14px;font-weight:600;padding:6px 13px;border-radius:999px;background:var(--kaart)}
+.meer{display:inline-block;margin-top:24px;font-weight:600;font-size:19px;color:var(--licht-accent);text-decoration:none}
+.meer::after{content:" ›"}
+.meer:hover{text-decoration:underline}
+.nieuw{font-size:12px;font-weight:600;color:var(--licht-ink2);border:1px dashed var(--licht-ink2);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:2px}
+.beeld{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,3vw,36px);padding-top:4px}
+.beeld .tel{width:min(260px,40%)}
+.beeld .tel + .tel{margin-top:clamp(24px,5vw,56px)}
+.beeld .ach{position:absolute;z-index:0;opacity:.0}
+.paneel:not([hidden]) .beeld{animation:in .45s ease both}
+@keyframes in{from{opacity:.001;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.paneel:not([hidden]) .beeld{animation:none}html{scroll-behavior:auto}}
+
+/* extra (donker) */
+.extra h2{text-align:center}
+.rij{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1024px;margin:44px auto 0}
+.kaart{background:var(--nacht2);border-radius:28px;padding:28px 28px 0;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.kaart b{font-size:21px;letter-spacing:-.01em}
+.kaart span{color:#A1A1A6;font-size:15px;margin-top:4px}
+.kaart span a{color:var(--blauw);text-decoration:none}
+.kaart .tel{width:64%;margin:26px auto -40%}
+.kaart.web{padding-bottom:28px}
+.kaart.web .mac{margin:28px 7% 3.4%}
 
 /* vragen */
-.vragen{max-width:760px;margin:40px auto 0;display:grid;gap:12px}
-.vraag{border-radius:18px;padding:0 22px;background:var(--wit)}
-@media (prefers-color-scheme:dark){.vraag{background:#2C2C2E}}
-.vraag summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em;position:relative}
-.vraag summary::-webkit-details-marker{display:none}
-.vraag summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;font-weight:400;color:var(--licht-accent)}
-.vraag[open] summary::after{content:"\2212"}
-.vraag p{margin:0 0 18px;font-size:16px;color:var(--licht-ink2)}
+.vragen h2{text-align:center}
+.lijst{max-width:760px;margin:36px auto 0;display:grid;gap:12px}
+details{border-radius:18px;padding:0 22px;background:var(--kaart)}
+summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;font-weight:400;color:var(--licht-accent)}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 18px;font-size:16px;color:var(--licht-ink2)}
 
-/* rustig opduiken */
-.js .op{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-.js .op.zicht{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .op{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.slot{text-align:center;padding:100px 0}
+.app-icoon{width:clamp(104px,15vw,140px);margin:0 auto 24px;border-radius:22.5%;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.slot .lead{margin-top:12px}
+footer{background:var(--nacht);border-top:1px solid rgba(255,255,255,.08);padding:28px 0 40px;font-size:13px;color:#86868B}
+footer .binnen{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a{color:#C7C7CC;text-decoration:none}
 
-@media (max-width:734px){
-  section{padding:72px 16px}
-  .hero{padding:0 0 64px}
+@media (max-width:820px){
+  section{padding:64px 0}
   .nav a.link{display:none}
-  .feiten{grid-template-columns:1fr}
+  .paneel{grid-template-columns:1fr;gap:32px;margin-top:32px}
+  .paneel .t{text-align:center}
+  .chips{justify-content:center}
+  .tabs{margin-top:24px}
+  .beeld .tel{width:42%}
+  .rij{grid-template-columns:1fr}
+  .kaart .tel{width:44%;margin-bottom:-22%}
   .video{border-radius:18px}
-  .mac{border-radius:8px}
-  footer .rechts{margin-left:0;width:100%}
+  .speel i{width:64px;height:64px}
+  .hero{padding-bottom:40px}
+  .trio{margin-top:36px}
+}
+
+/* js-afhankelijk: zonder JS staan alle panelen onder elkaar */
+.tabs{display:none}
+.js .tabs{display:flex}
+.js .paneel{display:none}
+.js .paneel.aan{display:grid}
+.speel{display:none}
+.js .speel{display:flex}
+.js .video:not(.speelt) video{pointer-events:none}
+.paneel{margin-top:48px}
+.licht .lead{color:var(--licht-ink2)}
+.licht .lead strong{color:var(--licht-ink)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* feiten */
+.feiten{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto}
+.feit{border-radius:22px;padding:24px;background:var(--nacht2)}
+.feit b{display:block;font-size:19px;letter-spacing:-.01em;margin-bottom:4px}
+.feit span{font-size:15px;color:#A1A1A6}
+
+/* onderwerppagina's */
+.hero.onderwerp{padding:0 0 72px}
+.hero.onderwerp .kop{margin-top:0;padding-top:72px}
+.hero.onderwerp h1{font-size:clamp(38px,6.4vw,68px);line-height:1.04;color:#F5F5F7;font-weight:700;letter-spacing:-.025em}
+.hero.onderwerp .h1-merk{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6;margin:0 0 10px}
+.beeld.solo{margin-top:48px}
+.beeld.solo .tel{width:min(280px,42%)}
+.solo-dev{margin:48px auto 0;max-width:900px}
+.solo-dev.tab-w{max-width:760px}
+.solo-dev.mac-w{max-width:880px}
+.links{padding:48px 0}
+.links .binnen{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.links .webknop{margin-top:0;font-size:17px}
+.licht .webknop{color:var(--licht-accent);border-color:currentColor}
+@media (max-width:820px){.feiten{grid-template-columns:1fr}.beeld.solo .tel{width:44%}}
+.solo-dev.mac-w{padding:0 6.5%}
+.hero{overflow-x:clip}
+/* gsm: beelden direct onder de tabs, tekst eronder */
+@media (max-width:820px){
+  .paneel{margin-top:22px;gap:26px}
+  .paneel .beeld{order:-1}
+  .paneel .t{padding-bottom:4px}
+}
+@media (max-width:480px){
+  .tabs{width:100%;gap:0;justify-content:space-between;padding:4px}
+  .tabs button{font-size:13.5px;padding:8px 9px}
+  .tabs button::before{display:none}
 }
 </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="nav-in">
-    <a class="merk" href="#top"><img src="/img/icoon.png" width="24" height="24" alt="">Skipped</a>
-    <a class="link" href="#te-doen">To Do</a>
-    <a class="link" href="#planner">Planner</a>
-    <a class="link" href="#studeren">Study</a>
-    <a class="link" href="#vrienden">Friends</a>
-    <a class="link" href="https://app.skippedapp.app">On the web</a>
-    <a class="link" href="/support.html#en">Support</a>
-    <a class="link" href="/" hreflang="nl" lang="nl">NL</a>
-    <a class="knop" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">Download</a>
-  </div>
-</header>
+<header class="nav"><div class="nav-in gutter">
+  <a class="merk" href="#top"><img src="/img/icoon.png" width="26" height="26" alt="">Skipped</a>
+  <a class="link" href="#spot">Spot</a><a class="link" href="#functies">Features</a><a class="link" href="#vragen">FAQ</a><a class="link" href="https://app.skippedapp.app">On the web</a>
+  <a class="link" href="/" hreflang="nl" lang="nl">NL</a>
+  <a class="knop" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">Download</a>
+</div></header>
 
 <main id="top">
-
 <section class="donker hero">
-  <img class="banner" src="/img/banner.jpg" width="2400" height="1029" alt="Skipped: Class Tracker, the app for your classes" fetchpriority="high">
-  <div class="kop">
-    <h1><span class="h1-merk">Skipped: Class Tracker</span>Every class counts.</h1>
-    <p class="lead">Keep track of the classes you <strong>attended</strong> and <strong>missed</strong>. Stay on top of every course, all the way to the exam.</p>
-    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download on the App Store"></a>
+  <img class="banner" src="/img/banner.jpg" width="2400" height="1029" alt="Skipped">
+  <div class="kop gutter">
+    <h1><span class="vh">Skipped: Class Tracker. </span>Every class counts.</h1>
+    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download"></a>
     <p class="klein">Free class tracker for iPhone, iPad and Mac.</p>
   </div>
-</section>
-
-<section class="donker spot">
-  <div class="video op">
-    <video controls playsinline preload="metadata" poster="/img/spot-poster.jpg?v=10" width="1920" height="1080">
-      <source src="/img/skipped-spot.mp4?v=10" type="video/mp4">
-    </video>
+  <div class="trio gutter">
+    <div class="dev mac"><img src="/img/hm-rooster.jpg" width="1600" height="1004" alt="Week schedule on the Mac"></div>
+    <div class="dev tab"><img src="/img/ht-examens.jpg" width="1400" height="1049" alt="Exams in the month planner on the iPad"></div>
+    <div class="dev tel"><img src="/img/hp-timer.jpg" width="640" height="1391" alt="The study timer on iPhone"></div>
   </div>
-  <p class="onder">Skipped in 21 seconds. Sound on.</p>
 </section>
 
-<section class="licht" id="rooster">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">Schedule</p>
-      <h2>Your classes, straight from Calendar.</h2>
-      <p class="lead">Skipped reads your timetable from Apple Calendar. A class you attended turns <strong>blue</strong>, a missed one gets a <strong>red</strong> pill, and the line shows where your day is right now. If you like, you can also see a friend's classes in your schedule.</p>
-    </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="/img/iphone-rooster.jpg" width="640" height="1391" alt="Weekly schedule in Skipped with classes per day" loading="lazy">
+<section class="donker spot" id="spot">
+  <div class="gutter">
+    <div class="kop"><p class="oog blauw">The spot</p><h2>Skipped in 21 seconds.</h2></div>
+    <div class="video" id="video">
+      <video controls playsinline preload="none" poster="/img/spot-poster.jpg?v=10" width="1920" height="1080"><source src="/img/skipped-spot.mp4?v=10" type="video/mp4"></video>
+      <button class="speel" id="speel" type="button" aria-label="Play the spot"><i><svg viewBox="0 0 30 30"><path d="M6 3l22 12L6 27z"/></svg></i><small>Sound on</small></button>
     </div>
   </div>
 </section>
 
-<section class="donker" id="te-doen">
-  <div class="binnen">
-    <div class="kop op">
-      <div class="pillen" aria-hidden="true"><i></i><i></i><i class="r"></i><i class="g"></i></div>
-      <p class="oog blauw">To Do</p>
-      <h2>Everything you still need to do, in one place.</h2>
-      <p class="lead">To Do collects every class you still need to catch up on and every task, <strong>sorted by course</strong>. Add a task with a deadline or attach it to a class. Check it off, and it's gone.</p>
-    </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="/img/iphone-te-doen.jpg" width="640" height="1391" alt="To Do on iPhone: missed classes and tasks per course" loading="lazy">
-    </div>
-    <div class="feiten op">
-      <div class="feit"><b>Tasks with a deadline</b><span>And a reminder in time, if you want one.</span></div>
-      <div class="feit"><b>Per course and per class</b><span>A task belongs to a course, or to the one class where it was assigned.</span></div>
-      <div class="feit"><b>Works with Reminders</b><span>Check off in Skipped or in Reminders, or paste a list you already had.</span></div>
-    </div>
+<section class="licht functies" id="functies"><div class="binnen gutter">
+  <div class="kop">
+    <div class="pillen" aria-hidden="true"><i></i><i></i><i class="r"></i><i class="g"></i></div>
+    <h2>Everything you need.</h2>
   </div>
-</section>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tab-rooster" aria-controls="rooster" aria-selected="true">Schedule</button>
+    <button role="tab" id="tab-te-doen" aria-controls="te-doen" aria-selected="false" tabindex=-1 data-kleur=rood>To Do</button>
+    <button role="tab" id="tab-planner" aria-controls="planner" aria-selected="false" tabindex=-1>Planner</button>
+    <button role="tab" id="tab-studeren" aria-controls="studeren" aria-selected="false" tabindex=-1>Study</button>
+    <button role="tab" id="tab-vrienden" aria-controls="vrienden" aria-selected="false" tabindex=-1>Friends</button>
+    </div>
 
-<section class="licht" id="planner">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">Planner</p>
-      <h2>Your exams, planned day by day.</h2>
-      <p class="lead">Add your exam dates and Skipped shows how many days you have left, <strong>what to do today</strong> and when you catch up on every missed class. Everything done at least two days before the exam.</p>
+  <div class="paneel aan" role="tabpanel" id="rooster" aria-labelledby="tab-rooster">
+    <div class="t">
+      <h3>Your classes, straight from Calendar.</h3>
+      <p>Blue is attended, a red pill is missed.</p>
+      <ul class="chips"><li>From Apple Calendar</li><li>Week and month</li><li>A note per class</li></ul>
+      <a class="meer" href="/en/class-attendance-tracker/">More about the schedule</a>
     </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="/img/iphone-planning.jpg" width="640" height="1391" alt="The planner in Skipped with today's study day" loading="lazy">
-    </div>
-    <div class="feiten op">
-      <div class="feit"><b>Study days with a goal</b><span>Whatever you did not check off moves to the next study day of that course.</span></div>
-      <div class="feit"><b>Catch up in time</b><span>A study block for every class you still need to catch up on, without clashing with your calendar.</span></div>
-      <div class="feit"><b>Countdown</b><span>How many days you have left, per course. <a href="/en/exam-planner/">More about the planner</a></span></div>
-    </div>
+    <div class="beeld"><div class="dev tel"><img src="/img/hp-rooster.jpg" width="640" height="1391" alt="Week schedule with attended and missed classes"></div><div class="dev tel"><img src="/img/hp-maand.jpg" width="640" height="1391" alt="Month view on iPhone" loading="lazy" decoding="async"></div></div>
   </div>
-</section>
 
-<section class="donker" id="studeren">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">Study mode</p>
-      <h2>Focus, with the clock on your side.</h2>
-      <p class="lead">Start a session for a course and Skipped keeps track of how much you studied this week. If you like, distracting apps stay closed until your session is done.</p>
+  <div class="paneel" role="tabpanel" id="te-doen" aria-labelledby="tab-te-doen">
+    <div class="t">
+      <h3>What you still need to do, per course.</h3>
+      <p>Missed classes and tasks on one list. Check off and done.</p>
+      <ul class="chips"><li>Deadlines</li><li>Per course and per class</li><li>Works with Reminders</li></ul>
+      <a class="meer" href="/en/to-do-list/">More about To Do</a>
     </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="/img/iphone-studeren.jpg" width="640" height="1391" alt="Study mode with timer and study time per week" loading="lazy">
-    </div>
-    <div class="feiten op">
-      <div class="feit"><b>Your rhythm</b><span>Free, pomodoro or a fixed time.</span></div>
-      <div class="feit"><b>Always in view</b><span>The timer runs on your Lock Screen and in the Dynamic Island.</span></div>
-      <div class="feit"><b>No distractions</b><span>Block apps with Screen Time, on iPhone and iPad.</span></div>
-    </div>
+    <div class="beeld"><div class="dev tel"><img src="/img/hp-tedoen.jpg" width="640" height="1391" alt="To Do per course" loading="lazy" decoding="async"></div><div class="dev tel"><img src="/img/hp-voortgang.jpg" width="640" height="1391" alt="Progress per course" loading="lazy" decoding="async"></div></div>
   </div>
-</section>
 
-<section class="donker" id="vrienden">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog neon">Friends and groups</p>
-      <h2>Together, you keep going.</h2>
-      <p class="lead">See who is studying right now and how many hours your friends put in. Start a group for exam season and see who studies the most. <strong>You choose</strong> what you share with each friend and each group.</p>
+  <div class="paneel" role="tabpanel" id="planner" aria-labelledby="tab-planner">
+    <div class="t">
+      <h3>Your exams, planned day by day.</h3>
+      <p>Skipped spreads your study days up to every exam.</p>
+      <ul class="chips"><li>Countdown per course</li><li>Study days</li><li>Catch up in time</li></ul>
+      <a class="meer" href="/en/exam-planner/">More about the planner</a>
     </div>
-    <div class="telefoons op">
-      <img class="telefoon" src="/img/iphone-vrienden.jpg" width="640" height="1391" alt="Friends in Skipped, with sample friends" loading="lazy">
-    </div>
+    <div class="beeld"><div class="dev tel"><img src="/img/hp-planning.jpg" width="640" height="1391" alt="The planner on iPhone" loading="lazy" decoding="async"></div><div class="dev tel"><img src="/img/hp-volgende-week.jpg" width="640" height="1391" alt="Next week in the planner" loading="lazy" decoding="async"></div></div>
   </div>
-</section>
 
-<section class="licht" id="meer">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">And more</p>
-      <h2>Everything you need.</h2>
+  <div class="paneel" role="tabpanel" id="studeren" aria-labelledby="tab-studeren">
+    <div class="t">
+      <h3>Focus, with the clock on your side.</h3>
+      <p>A timer per course. Distracting apps stay closed until you are done.</p>
+      <ul class="chips"><li>Pomodoro</li><li>Dynamic Island</li><li>Block apps</li></ul>
+      <a class="meer" href="/en/pomodoro-timer/">More about study mode</a>
     </div>
-    <div class="feiten op">
-      <div class="feit"><b>Widgets</b><span>Your next class and what you still need to catch up on, on your Home Screen. Check off right in the widget.</span></div>
-      <div class="feit"><b>Notes</b><span>A note with every class, so you know what it was about.</span></div>
-      <div class="feit"><b>Focus</b><span>Link study mode to a Focus with Shortcuts.</span></div>
-    </div>
+    <div class="beeld"><div class="dev tel"><img src="/img/hp-timer.jpg" width="640" height="1391" alt="The study timer" loading="lazy" decoding="async"></div><div class="dev tel"><img src="/img/hp-studeerweek.jpg" width="640" height="1391" alt="Study hours this week" loading="lazy" decoding="async"></div></div>
   </div>
-</section>
 
-<section class="donker" id="overal">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">iPhone, iPad, Mac and web</p>
-      <h2>The same schedule everywhere.</h2>
-      <p class="lead">Your courses, notes and study sessions sync to your other devices through iCloud. No account needed. And on any other computer, you can open your schedule on the web.</p>
-      <a class="webknop" href="https://app.skippedapp.app">Open Skipped on the web</a>
+  <div class="paneel" role="tabpanel" id="vrienden" aria-labelledby="tab-vrienden">
+    <div class="t">
+      <h3>Together, you keep going.</h3>
+      <p>See who is studying now and start a group for exam season.</p>
+      <ul class="chips"><li>Who is studying now</li><li>Groups</li><li>You choose what you share</li></ul>
+      <a class="meer" href="/en/study-with-friends/">More about friends</a>
     </div>
-    <img class="ipad op" src="/img/ipad-rooster.jpg" width="1800" height="1350" alt="Skipped on iPad with the weekly schedule and a friend’s schedule" loading="lazy">
+    <div class="beeld"><div class="dev tel"><img src="/img/hp-vrienden.jpg" width="640" height="1391" alt="Friends" loading="lazy" decoding="async"></div><div class="dev tel"><img src="/img/hp-groep.jpg" width="640" height="1391" alt="An exam group" loading="lazy" decoding="async"></div></div>
   </div>
-</section>
+</div></section>
 
-<section class="licht" id="faq">
-  <div class="binnen">
-    <div class="kop op">
-      <p class="oog blauw">Questions</p>
-      <h2>Frequently asked.</h2>
-    </div>
-    <div class="vragen op">
+<section class="donker extra"><div class="binnen gutter">
+  <h2>And always at hand.</h2>
+  <div class="rij">
+    <div class="kaart"><b>On your Lock Screen</b><span>The timer follows along as a Live Activity.</span><div class="dev tel"><img src="/img/hp-live.jpg" width="640" height="1391" alt="Live Activity on the Lock Screen" loading="lazy" decoding="async"></div></div>
+    <div class="kaart"><b>Widgets</b><span>Your next class, and check off from your Home Screen.</span><div class="dev tel"><img src="/img/hp-widgets.jpg" width="640" height="1391" alt="Widgets on the Home Screen" loading="lazy" decoding="async"></div></div>
+    <div class="kaart web"><b>iPhone, iPad, Mac and web</b><span>The same schedule everywhere through iCloud. <a href="https://app.skippedapp.app">Open on the web ›</a></span><div class="dev mac"><img src="/img/hm-examens.jpg" width="1600" height="1004" alt="Exams in the month planner on the Mac" loading="lazy" decoding="async"></div></div>
+  </div>
+</div></section>
+
+<section class="licht vragen" id="vragen"><div class="binnen gutter">
+  <h2>Frequently asked.</h2>
+  <div class="lijst">
       <details class="vraag"><summary>What is Skipped?</summary><p>Skipped: Class Tracker is a free app for iPhone, iPad and Mac that keeps track of which classes you attended and which you missed. Your schedule comes from Apple Calendar, and everything you still need to catch up on is in To Do.</p></details>
       <details class="vraag"><summary>How do I keep track of the classes I missed?</summary><p>Mark each class in Skipped as attended or missed. A missed class gets a red pill and goes to To Do, sorted by course, until you have caught up.</p></details>
       <details class="vraag"><summary>Does Skipped work with my university or college timetable?</summary><p>Yes, as long as your timetable is in Apple Calendar, for example through a calendar subscription (iCal link) from your school. Skipped reads your classes from there, so there is nothing to type over.</p></details>
@@ -404,44 +447,50 @@ footer .rechts{margin-left:auto}
       <details class="vraag"><summary>Can I study with a timer and block distracting apps?</summary><p>Yes. In study mode you choose free, pomodoro or a fixed time. The timer shows on your Lock Screen and in the Dynamic Island, and on iPhone and iPad you can block apps through Screen Time.</p></details>
       <details class="vraag"><summary>Can I study together with friends?</summary><p>Yes. See who is studying right now and how many hours your friends put in, and start a group for exam season. You choose what you share with each friend and each group.</p></details>
       <details class="vraag"><summary>Do I need an iPhone?</summary><p>The app is available for iPhone, iPad and Mac. On any other computer you can open your schedule with Skipped on the web.</p></details>
-    </div>
-  </div>
-</section>
+      </div>
+</div></section>
 
-<section class="donker slot">
-  <div class="op">
-    <img class="app-icoon" src="/img/icoon-groot.png" width="180" height="180" alt="" loading="lazy">
-    <h2>Skipped</h2>
-    <p class="lead">Every class counts. Free for iPhone, iPad and Mac.</p>
-    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download on the App Store"></a>
-  </div>
-</section>
-
+<section class="donker slot"><div class="gutter">
+  <img class="app-icoon" src="/img/icoon-groot.png" width="180" height="180" alt="" loading="lazy">
+  <h2>Skipped</h2>
+  <p class="lead">Every class counts. Free for iPhone, iPad and Mac.</p>
+  <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download"></a>
+</div></section>
 </main>
 
-<footer>
-  <div class="binnen">
-    <a href="/support.html#en">Support</a>
-    <a href="/privacy.html#en">Privacy Policy</a>
-    <a href="/voorwaarden.html#en">Terms of Use</a>
-    <a href="https://app.skippedapp.app">Skipped on the web</a>
-    <a href="/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">App Store</a>
-    <a href="/en/exam-planner/">Exam planner</a>
-    <a href="/en/class-attendance-tracker/">Class tracker</a>
-    <a href="/en/pomodoro-timer/">Study mode</a>
-    <span class="rechts">Skipped: Class Tracker</span>
-  </div>
-</footer>
+<footer><div class="binnen gutter">
+  <a href="/support.html#en">Support</a><a href="/privacy.html#en">Privacy Policy</a><a href="/voorwaarden.html#en">Terms of Use</a><a href="https://app.skippedapp.app">Skipped on the web</a><a href="/en/class-attendance-tracker/">Class tracker</a><a href="/en/to-do-list/">To Do</a><a href="/en/exam-planner/">Exam planner</a><a href="/en/pomodoro-timer/">Study mode</a><a href="/en/study-with-friends/">Study with friends</a>
+  <a href="/" hreflang="nl" lang="nl">Nederlands</a>
+  <a href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">App Store</a>
+  <span class="rechts">Skipped: Class Tracker</span>
+</div></footer>
 
 <script>
 (function(){
-  if(!('IntersectionObserver' in window)) return;
-  document.documentElement.classList.add('js');
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('zicht'); io.unobserve(e.target); } });
-  },{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.op').forEach(function(el){ io.observe(el); });
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  var ids=tabs.map(function(t){return t.getAttribute('aria-controls')});
+  function kies(id,focus){
+    if(ids.indexOf(id)<0) return false;
+    tabs.forEach(function(t){var aan=t.getAttribute('aria-controls')===id;
+      t.setAttribute('aria-selected',aan);t.tabIndex=aan?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).classList.toggle('aan',aan);
+      if(aan){try{t.parentNode.scrollTo({left:t.offsetLeft-16,behavior:'smooth'})}catch(e){}if(focus)t.focus();}});
+    return true;
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){kies(ids[i])});
+    t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(d){e.preventDefault();kies(ids[(i+d+ids.length)%ids.length],true)}});
+  });
+  document.querySelectorAll('.beeld').forEach(function(el){var x0=null;
+    el.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    el.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;
+      if(Math.abs(dx)<50)return;var i=ids.indexOf(el.parentNode.id);kies(ids[(i+(dx<0?1:-1)+ids.length)%ids.length])});
+  });
+  function hash(){var h=location.hash.slice(1);if(kies(h))document.getElementById('functies').scrollIntoView();}
+  window.addEventListener('hashchange',hash);hash();
+  var v=document.getElementById('video'),vid=v.querySelector('video');
+  document.getElementById('speel').onclick=function(){v.classList.add('speelt');vid.play().catch(function(){})};
 })();
 </script>
 </body>
