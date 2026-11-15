@@ -318,6 +318,17 @@ footer a{color:#C7C7CC;text-decoration:none}
 @media (max-width:820px){.feiten{grid-template-columns:1fr}.beeld.solo .tel{width:44%}}
 .solo-dev.mac-w{padding:0 6.5%}
 .hero{overflow-x:clip}
+/* gsm: beelden direct onder de tabs, tekst eronder */
+@media (max-width:820px){
+  .paneel{margin-top:22px;gap:26px}
+  .paneel .beeld{order:-1}
+  .paneel .t{padding-bottom:4px}
+}
+@media (max-width:480px){
+  .tabs{width:100%;gap:0;justify-content:space-between;padding:4px}
+  .tabs button{font-size:13.5px;padding:8px 9px}
+  .tabs button::before{display:none}
+}
 </style>
 </head>
 <body>
