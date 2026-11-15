@@ -199,6 +199,22 @@ footer .rechts{margin-left:auto}
   .mac{border-radius:8px}
   footer .rechts{margin-left:0;width:100%}
 }
+/* toestelkaders van de homepage */
+/* toestelkaders: titanium rand, zwarte bezel, Dynamic Island, camera, MacBook-voet */
+.dev{display:block;position:relative;background:#050506}
+.dev img{width:100%;display:block}
+.tel{padding:0;border-radius:15%/7%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tel img{width:95.8%;margin:2.1%;border-radius:13.4%/6.2%}
+.tel::after{content:"";position:absolute;top:2.25%;left:50%;width:28.8%;aspect-ratio:3.38;transform:translateX(-50%);background:#000;border-radius:999px}
+.tab{padding:0;border-radius:2.9%/3.9%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tab img{width:97.4%;margin:1.3%;border-radius:1.8%/2.4%}
+.tab::after{content:"";position:absolute;top:.6%;left:50%;width:.45%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:#1a1d26}
+.mac{padding:1.3% 1.3% 2.4%;border-radius:2.4% 2.4% 0 0/3.8% 3.8% 0 0;box-shadow:inset 0 0 0 1px #4a4a4f,inset 0 0 0 2px #151517;margin-bottom:3.4%}
+.mac img{border-radius:.5%}
+.mac::after{content:"";position:absolute;top:100%;left:-6.5%;right:-6.5%;aspect-ratio:46;background:linear-gradient(to right,transparent 42%,rgba(0,0,0,.25) 42.6%,rgba(0,0,0,.25) 57.4%,transparent 58%) top/100% 42% no-repeat,linear-gradient(#ececee,#c9c9cc 50%,#8f8f93);border-radius:3px 3px 48% 48%/3px 3px 100% 100%;box-shadow:0 18px 30px -16px rgba(0,0,0,.6)}
+.dev{display:flow-root}
+.telefoons .tel{width:min(300px,44vw)}
+.telefoons .tel.laag{margin-top:clamp(24px,6vw,64px)}
 </style>
 <style>.hero.onderwerp{padding:96px 16px 88px} .meer-links{text-align:center;margin-top:8px} .meer-links .webknop{margin:12px 6px 0;font-size:17px}</style>
 </head>
@@ -224,7 +240,7 @@ footer .rechts{margin-left:auto}
     <p class="klein">Free for iPhone, iPad and Mac.</p>
   </div>
   <div class="telefoons op">
-    <img class="telefoon" src="/img/en-studeren-timer.jpg" width="640" height="1391" alt="Running study timer in Skipped with break budget" loading="lazy">
+    <div class="dev tel"><img src="/img/en-studeren-timer.jpg" width="640" height="1391" alt="Running study timer in Skipped with break budget" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -235,7 +251,7 @@ footer .rechts{margin-left:auto}
       <h2>Pomodoro, fixed or free.</h2>
       <p class="lead">Pick your rhythm and your break, take extra time or start another round with one tap. The timer runs on your Lock Screen and in the Dynamic Island.</p>
     </div>
-    <div class="telefoons op"><img class="telefoon" src="/img/en-toegangsscherm-live-activity.jpg" width="640" height="1391" alt="Pomodoro, fixed or free." loading="lazy"></div>
+    <div class="telefoons op"><div class="dev tel"><img src="/img/en-toegangsscherm-live-activity.jpg" width="640" height="1391" alt="Pomodoro, fixed or free." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
 
@@ -246,7 +262,7 @@ footer .rechts{margin-left:auto}
       <h2>No distractions during your session.</h2>
       <p class="lead">Choose which apps to close with Screen Time, on iPhone and iPad. They come back on their own at your break and at the end, even when Skipped is closed.</p>
     </div>
-    <div class="telefoons op"><img class="telefoon" src="/img/en-studeren-blokkeren.jpg" width="640" height="1391" alt="No distractions during your session." loading="lazy"></div>
+    <div class="telefoons op"><div class="dev tel"><img src="/img/en-studeren-blokkeren.jpg" width="640" height="1391" alt="No distractions during your session." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
 
@@ -257,7 +273,7 @@ footer .rechts{margin-left:auto}
       <h2>See how much you studied.</h2>
       <p class="lead">Skipped tracks your study time per day and per week, per course, with a weekly goal. Studying with friends? See who is at it right now.</p>
     </div>
-    <div class="telefoons op"><img class="telefoon" src="/img/en-studeren-week.jpg" width="640" height="1391" alt="See how much you studied." loading="lazy"></div>
+    <div class="telefoons op"><div class="dev tel"><img src="/img/en-studeren-week.jpg" width="640" height="1391" alt="See how much you studied." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
 
