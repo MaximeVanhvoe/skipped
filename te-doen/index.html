@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Te doen: gemiste lessen en taken per vak · Skipped: Class Tracker</title>
+<meta name="description" content="In Te doen van Skipped staan alle lessen die je nog moet inhalen en al je taken, netjes per vak, met deadlines en een link naar Herinneringen. Gratis voor iPhone, iPad en Mac.">
+<link rel="canonical" href="https://skippedapp.app/te-doen/">
+<link rel="alternate" hreflang="nl" href="https://skippedapp.app/te-doen/">
+<link rel="alternate" hreflang="en" href="https://skippedapp.app/en/to-do-list/">
+<link rel="alternate" hreflang="x-default" href="https://skippedapp.app/en/to-do-list/">
+<meta name="apple-itunes-app" content="app-id=6826845318, affiliate-data=pt=129678265&amp;ct=website%20link">
+<meta name="theme-color" content="#101014">
+<meta property="og:site_name" content="Skipped">
+<meta property="og:title" content="Alles wat je nog moet doen, op één plek.">
+<meta property="og:description" content="In Te doen van Skipped staan alle lessen die je nog moet inhalen en al je taken, netjes per vak, met deadlines en een link naar Herinneringen. Gratis voor iPhone, iPad en Mac.">
+<meta property="og:image" content="https://skippedapp.app/img/banner.jpg">
+<meta property="og:url" content="https://skippedapp.app/te-doen/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat staat er in Te doen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alle lessen die je nog moet inhalen en al je taken, netjes per vak. Een les die je als gemist afvinkt, komt vanzelf in Te doen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik taken met een deadline toevoegen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Je voegt een taak toe met een deadline, of hangt ze aan een les. Op wens krijg je een melding op tijd."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werkt Te doen met Herinneringen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Je kunt afvinken in Skipped of in Herinneringen, of een lijstje plakken dat je al had."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Skipped",
+        "item": "https://skippedapp.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Te doen",
+        "item": "https://skippedapp.app/te-doen/"
+      }
+    ]
+  }
+]
+</script>
+<link rel="icon" href="/img/icoon.png">
+<link rel="apple-touch-icon" href="/img/icoon.png">
+<script>document.documentElement.className+=' js'</script>
+<style>
+
+/* Layout: de huidige site-start (banner, kop, badge), drie toestellen met drie functies, grote spot, daarna één tabblok met telkens twee iPhone-beelden. Kleuren en vormen van de huidige site. */
+:root{
+  --nacht:#101014; --nacht2:#17171C; --ink:#1D1D1F; --ink2:#6E6E73; --titanium:#E7E5E1; --wit:#fff;
+  --blauw:#2997FF; --blauw-licht:#0066CC; --rood:#FF3B4E; --neon:#3DF5A0; --grijs:#3A3A40;
+  --licht-bg:var(--titanium); --licht-ink:var(--ink); --licht-ink2:var(--ink2); --licht-accent:var(--blauw-licht); --kaart:#fff; --track:#D5D2CC;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+  --kop:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Inter,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--licht-bg:#1C1C1F;--licht-ink:#F5F5F7;--licht-ink2:#A1A1A6;--licht-accent:var(--blauw);--kaart:#2C2C2E;--track:#3A3A3E;color-scheme:dark}}
+:root[data-theme="dark"]{--licht-bg:#1C1C1F;--licht-ink:#F5F5F7;--licht-ink2:#A1A1A6;--licht-accent:var(--blauw);--kaart:#2C2C2E;--track:#3A3A3E;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--nacht);color:#F5F5F7;font:17px/1.5 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--kop);font-weight:700;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.binnen{max-width:1024px;margin:0 auto}
+
+/* nav (zoals nu) */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--nacht)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(16,16,20,.78);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-in{max-width:1024px;margin:0 auto;height:52px;display:flex;align-items:center;gap:20px}
+.merk{font:700 21px/1 var(--kop);letter-spacing:-.02em;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.merk img{border-radius:6px;width:26px;height:26px}
+.nav a.link{font-size:13px;color:#C7C7CC;text-decoration:none}
+.nav a.link:hover{color:#fff}
+.knop{display:inline-block;background:var(--blauw);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.knop:hover{background:#4AA8FF}
+
+section{padding:88px 0}
+.licht{background:var(--licht-bg);color:var(--licht-ink)}
+.donker{background:var(--nacht);color:#F5F5F7}
+.kop{text-align:center;max-width:760px;margin:0 auto}
+.oog{font-size:19px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
+.blauw{color:var(--blauw)} .licht .blauw{color:var(--licht-accent)} .neon{color:var(--neon)}
+h2{font-size:clamp(36px,6vw,60px);line-height:1.05}
+.lead{font-size:clamp(19px,2.4vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;margin:20px auto 0;max-width:680px;color:#A1A1A6}
+.lead strong{color:#F5F5F7;font-weight:600}
+
+/* hero: de start van nu */
+.hero{padding:0 0 56px;text-align:center}
+.banner{width:100%;max-width:1600px;margin:0 auto;aspect-ratio:3840/1300;object-fit:cover}
+.hero .kop{margin-top:calc(min(100vw,1600px) * -.112)}
+.hero h1{font-size:clamp(17px,1.9vw,23px);font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.h1-merk{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6;margin:0 0 10px}
+.badge{display:inline-block;margin-top:30px;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge img{height:56px;width:auto}
+.klein{font-size:14px;color:#86868B;margin:12px 0 0}
+
+/* toestellen */
+/* toestelkaders: titanium rand, zwarte bezel, Dynamic Island, camera, MacBook-voet */
+.dev{display:block;position:relative;background:#050506}
+.dev img{width:100%;display:block}
+.tel{padding:0;border-radius:15%/7%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tel img{width:95.8%;margin:2.1%;border-radius:13.4%/6.2%}
+.tel::after{content:"";position:absolute;top:2.25%;left:50%;width:28.8%;aspect-ratio:3.38;transform:translateX(-50%);background:#000;border-radius:999px}
+.tab{padding:0;border-radius:2.9%/3.9%;box-shadow:inset 0 0 0 1px #9a9aa0,inset 0 0 0 2px #3b3b3f,0 0 0 .5px rgba(0,0,0,.6),0 34px 60px -24px rgba(0,0,0,.6)}
+.tab img{width:97.4%;margin:1.3%;border-radius:1.8%/2.4%}
+.tab::after{content:"";position:absolute;top:.6%;left:50%;width:.45%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:#1a1d26}
+.mac{padding:1.3% 1.3% 2.4%;border-radius:2.4% 2.4% 0 0/3.8% 3.8% 0 0;box-shadow:inset 0 0 0 1px #4a4a4f,inset 0 0 0 2px #151517;margin-bottom:3.4%}
+.mac img{border-radius:.5%}
+.mac::after{content:"";position:absolute;top:100%;left:-6.5%;right:-6.5%;aspect-ratio:46;background:linear-gradient(to right,transparent 42%,rgba(0,0,0,.25) 42.6%,rgba(0,0,0,.25) 57.4%,transparent 58%) top/100% 42% no-repeat,linear-gradient(#ececee,#c9c9cc 50%,#8f8f93);border-radius:3px 3px 48% 48%/3px 3px 100% 100%;box-shadow:0 18px 30px -16px rgba(0,0,0,.6)}
+.trio{position:relative;max-width:940px;margin:52px auto 0;padding:0 0 3%}
+.trio .mac{width:72%;margin:0 auto 3.4%}
+.trio .tab{position:absolute;left:0;bottom:0;width:36%}
+.trio .tel{position:absolute;right:2%;bottom:0;width:14.5%}
+/* kleine toestellen: rand evenredig dunner, zodat ze er net zo uitzien als de grote */
+
+
+/* spot */
+.spot{padding:24px 0 96px}
+.spot .kop{margin-bottom:36px}
+.video{position:relative;max-width:1024px;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.video video{width:100%;aspect-ratio:16/9;background:#000;object-fit:cover}
+.speel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:0;background:linear-gradient(rgba(16,16,20,.25),rgba(16,16,20,.55));color:#fff;font:600 19px var(--font);cursor:pointer}
+.speel i{width:84px;height:84px;border-radius:50%;background:var(--blauw);display:grid;place-items:center;box-shadow:0 10px 40px rgba(41,151,255,.45);transition:transform .2s}
+.speel:hover i{transform:scale(1.06)}
+.speel svg{width:30px;height:30px;fill:#fff;margin-left:4px}
+.speel small{font-weight:500;font-size:14px;color:#D1D1D6}
+.video.speelt .speel{display:none}
+.video:not(.speelt) video{pointer-events:none}
+
+/* tabs: kleur en vorm van de pilletjes uit de banner */
+.pillen{display:flex;justify-content:center;gap:8px;margin:0 0 24px}
+.pillen i{width:12px;height:36px;border-radius:999px;background:var(--blauw)}
+.pillen i.r{background:var(--rood)} .pillen i.g{background:#C9C6C0}
+@media (prefers-color-scheme:dark){.pillen i.g{background:var(--grijs)}}
+.tabs{display:flex;gap:6px;margin:30px auto 0;padding:5px;background:var(--track);border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;font:600 15px var(--font);color:var(--licht-ink2);background:none;border:0;padding:9px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.tabs button::before{content:"";width:6px;height:16px;border-radius:99px;background:currentColor;opacity:.35}
+.tabs button[aria-selected="true"]{background:var(--blauw-licht);color:#fff}
+.tabs button[aria-selected="true"]::before{background:#fff;opacity:1}
+.tabs button[data-kleur="rood"][aria-selected="true"]::before{background:#FFD0D4}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--blauw);outline-offset:3px}
+
+.paneel{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);gap:56px;align-items:center;margin-top:48px}
+.paneel .t{min-width:0}
+.paneel h3{font-size:clamp(28px,3.6vw,42px);line-height:1.07}
+.paneel p{color:var(--licht-ink2);font-size:19px;margin:12px 0 0;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:22px 0 0}
+.chips li{font-size:14px;font-weight:600;padding:6px 13px;border-radius:999px;background:var(--kaart)}
+.meer{display:inline-block;margin-top:24px;font-weight:600;font-size:19px;color:var(--licht-accent);text-decoration:none}
+.meer::after{content:" ›"}
+.meer:hover{text-decoration:underline}
+.nieuw{font-size:12px;font-weight:600;color:var(--licht-ink2);border:1px dashed var(--licht-ink2);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:2px}
+.beeld{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,3vw,36px);padding-top:4px}
+.beeld .tel{width:min(260px,40%)}
+.beeld .tel + .tel{margin-top:clamp(24px,5vw,56px)}
+.beeld .ach{position:absolute;z-index:0;opacity:.0}
+.paneel:not([hidden]) .beeld{animation:in .45s ease both}
+@keyframes in{from{opacity:.001;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.paneel:not([hidden]) .beeld{animation:none}html{scroll-behavior:auto}}
+
+/* extra (donker) */
+.extra h2{text-align:center}
+.rij{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1024px;margin:44px auto 0}
+.kaart{background:var(--nacht2);border-radius:28px;padding:28px 28px 0;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.kaart b{font-size:21px;letter-spacing:-.01em}
+.kaart span{color:#A1A1A6;font-size:15px;margin-top:4px}
+.kaart span a{color:var(--blauw);text-decoration:none}
+.kaart .tel{width:64%;margin:26px auto -40%}
+.kaart.web{padding-bottom:28px}
+.kaart.web .mac{margin:28px 7% 3.4%}
+
+/* vragen */
+.vragen h2{text-align:center}
+.lijst{max-width:760px;margin:36px auto 0;display:grid;gap:12px}
+details{border-radius:18px;padding:0 22px;background:var(--kaart)}
+summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;font-weight:400;color:var(--licht-accent)}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 18px;font-size:16px;color:var(--licht-ink2)}
+
+.slot{text-align:center;padding:100px 0}
+.app-icoon{width:clamp(104px,15vw,140px);margin:0 auto 24px;border-radius:22.5%;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.slot .lead{margin-top:12px}
+footer{background:var(--nacht);border-top:1px solid rgba(255,255,255,.08);padding:28px 0 40px;font-size:13px;color:#86868B}
+footer .binnen{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a{color:#C7C7CC;text-decoration:none}
+
+@media (max-width:820px){
+  section{padding:64px 0}
+  .nav a.link{display:none}
+  .paneel{grid-template-columns:1fr;gap:32px;margin-top:32px}
+  .paneel .t{text-align:center}
+  .chips{justify-content:center}
+  .tabs{margin-top:24px}
+  .beeld .tel{width:42%}
+  .rij{grid-template-columns:1fr}
+  .kaart .tel{width:44%;margin-bottom:-22%}
+  .video{border-radius:18px}
+  .speel i{width:64px;height:64px}
+  .hero{padding-bottom:40px}
+  .trio{margin-top:36px}
+}
+
+/* js-afhankelijk: zonder JS staan alle panelen onder elkaar */
+.tabs{display:none}
+.js .tabs{display:flex}
+.js .paneel{display:none}
+.js .paneel.aan{display:grid}
+.speel{display:none}
+.js .speel{display:flex}
+.js .video:not(.speelt) video{pointer-events:none}
+.paneel{margin-top:48px}
+.licht .lead{color:var(--licht-ink2)}
+.licht .lead strong{color:var(--licht-ink)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* feiten */
+.feiten{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto}
+.feit{border-radius:22px;padding:24px;background:var(--nacht2)}
+.feit b{display:block;font-size:19px;letter-spacing:-.01em;margin-bottom:4px}
+.feit span{font-size:15px;color:#A1A1A6}
+
+/* onderwerppagina's */
+.hero.onderwerp{padding:0 0 72px}
+.hero.onderwerp .kop{margin-top:0;padding-top:72px}
+.hero.onderwerp h1{font-size:clamp(38px,6.4vw,68px);line-height:1.04;color:#F5F5F7;font-weight:700;letter-spacing:-.025em}
+.hero.onderwerp .h1-merk{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#A1A1A6;margin:0 0 10px}
+.beeld.solo{margin-top:48px}
+.beeld.solo .tel{width:min(280px,42%)}
+.solo-dev{margin:48px auto 0;max-width:900px}
+.solo-dev.tab-w{max-width:760px}
+.solo-dev.mac-w{max-width:880px}
+.links{padding:48px 0}
+.links .binnen{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.links .webknop{margin-top:0;font-size:17px}
+.licht .webknop{color:var(--licht-accent);border-color:currentColor}
+@media (max-width:820px){.feiten{grid-template-columns:1fr}.beeld.solo .tel{width:44%}}
+.solo-dev.mac-w{padding:0 6.5%}
+.hero{overflow-x:clip}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-in gutter">
+  <a class="merk" href="#top"><img src="/img/icoon.png" width="26" height="26" alt="">Skipped</a>
+  <a class="link" href="#spot">Spot</a><a class="link" href="#functies">Functies</a><a class="link" href="#vragen">Vragen</a><a class="link" href="https://app.skippedapp.app">Op het web</a>
+  <a class="link" href="/en/to-do-list/" hreflang="en" lang="en">EN</a>
+  <a class="knop" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">Download</a>
+</div></header>
+
+<main>
+<section class="donker hero onderwerp">
+  <div class="kop gutter">
+    <h1><span class="h1-merk">Te doen · Skipped: Class Tracker</span>Alles wat je nog moet doen, op één plek.</h1>
+    <p class="lead">Te doen verzamelt elke les die je nog moet inhalen en elke taak, <strong>netjes per vak</strong>. Vink af, en ze is weg.</p>
+    <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download"></a>
+    <p class="klein">Gratis voor iPhone, iPad en Mac.</p>
+  </div>
+  <div class="beeld solo gutter"><div class="beeld solo"><div class="dev tel"><img src="/img/hp-tedoen.jpg" width="640" height="1391" alt="Te doen per vak"></div><div class="dev tel"><img src="/img/hp-voortgang.jpg" width="640" height="1391" alt="Voortgang per vak"></div></div></div>
+</section>
+
+<section class="licht"><div class="binnen gutter">
+  <div class="kop"><p class="oog blauw">Per vak</p><h2>Gemiste lessen en taken samen.</h2><p class="lead">Elke les die je als gemist afvinkt, komt vanzelf in Te doen, onder het juiste vak. Taken staan ernaast, zodat je per vak ziet wat er nog openstaat.</p></div>
+  <div class="solo-dev mac-w"><div class="dev mac"><img src="/img/hm-tedoen.jpg" width="1600" height="1004" alt="Te doen op de Mac" loading="lazy" decoding="async"></div></div>
+</div></section>
+
+<section class="donker"><div class="binnen gutter">
+  <div class="kop"><p class="oog blauw">Taken</p><h2>Met een deadline, of bij een les.</h2><p class="lead">Voeg een taak toe met een deadline en, als je wilt, een melding op tijd. Of hang ze aan de les waarin ze opgegeven werd.</p></div>
+  <div class="solo-dev tab-w"><div class="dev tab"><img src="/img/ht-tedoen.jpg" width="1400" height="1049" alt="Voortgang in Te doen op de iPad" loading="lazy" decoding="async"></div></div>
+</div></section>
+
+<section class="donker"><div class="binnen gutter"><div class="feiten"><div class="feit"><b>Taken met een deadline</b><span>En een melding op tijd, als je wilt.</span></div><div class="feit"><b>Per vak en per les</b><span>Een taak hoort bij een vak, of bij die ene les waarin ze opgegeven werd.</span></div><div class="feit"><b>Samen met Herinneringen</b><span>Vink af in Skipped of in Herinneringen, of plak een lijstje dat je al had.</span></div></div></div></section>
+
+<section class="licht vragen" id="vragen"><div class="binnen gutter">
+  <h2>Vaak gesteld.</h2>
+  <div class="lijst">
+      <details class="vraag"><summary>Wat staat er in Te doen?</summary><p>Alle lessen die je nog moet inhalen en al je taken, netjes per vak. Een les die je als gemist afvinkt, komt vanzelf in Te doen.</p></details>
+      <details class="vraag"><summary>Kan ik taken met een deadline toevoegen?</summary><p>Ja. Je voegt een taak toe met een deadline, of hangt ze aan een les. Op wens krijg je een melding op tijd.</p></details>
+      <details class="vraag"><summary>Werkt Te doen met Herinneringen?</summary><p>Ja. Je kunt afvinken in Skipped of in Herinneringen, of een lijstje plakken dat je al had.</p></details>
+      </div>
+</div></section>
+
+<section class="donker slot"><div class="gutter">
+  <img class="app-icoon" src="/img/icoon-groot.png" width="180" height="180" alt="" loading="lazy">
+  <h2>Skipped</h2>
+  <p class="lead">Elke les telt. Gratis voor iPhone, iPad en Mac.</p>
+  <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download"></a>
+</div></section>
+<section class="licht links"><div class="binnen gutter"><a class="webknop" href="/lessen-bijhouden/">Lessen bijhouden</a><a class="webknop" href="/examenplanner/">Examenplanner</a><a class="webknop" href="/">Alle functies bekijken</a></div></section>
+</main>
+
+<footer><div class="binnen gutter">
+  <a href="/support.html">Support</a><a href="/privacy.html">Privacybeleid</a><a href="/voorwaarden.html">Voorwaarden</a><a href="https://app.skippedapp.app">Skipped op het web</a><a href="/lessen-bijhouden/">Lessen bijhouden</a><a href="/te-doen/">Te doen</a><a href="/examenplanner/">Examenplanner</a><a href="/pomodoro-timer/">Studeermodus</a><a href="/studeren-met-vrienden/">Studeren met vrienden</a>
+  <a href="/en/to-do-list/" hreflang="en" lang="en">English</a>
+  <a href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">App Store</a>
+  <span class="rechts">Skipped: Class Tracker</span>
+</div></footer>
+</body>
+</html>
