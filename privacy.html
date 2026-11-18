@@ -19,10 +19,10 @@
 <section id="nl" class="card">
 <p class="lang">Nederlands</p>
 <h1>Privacybeleid</h1>
-<p class="meta">Skipped · laatst bijgewerkt op 13 november 2026</p>
+<p class="meta">Skipped · laatst bijgewerkt op 17 november 2026</p>
 
 <h2>Kort</h2>
-<p>Skipped werkt zonder account. Zolang je niet inlogt, blijft alles wat de app leest of bewaart op je toestellen en, als je synchronisatie aan hebt, in je eigen iCloud. Er is geen reclame, geen tracking en geen analyse van je gebruik.</p>
+<p>Skipped werkt zonder account. Zolang je niet inlogt, blijft alles wat de app leest of bewaart op je toestellen en, als je synchronisatie aan hebt, in je eigen iCloud. Er is geen reclame en geen tracking. De app meet je gebruik niet; alleen als je het zelf aanzet, stuurt ze een anoniem rapport wanneer je je rooster zoekt (zie ‘Rooster zoeken’).</p>
 <p>Alleen als je zelf inlogt met Apple, bewaart de server van Skipped (bij Cloudflare) gegevens die bij jouw account horen. Dat gebeurt in twee gevallen:</p>
 <ul>
 <li><b>Vrienden en groepen</b>: je naam in Skipped, wie je vrienden en groepen zijn, en alleen wat jij per vriend of groep deelt. Zie <a href="#vrienden">Vrienden en groepen</a>.</li>
@@ -65,6 +65,11 @@
 <h2>Skipped op het web (optioneel)</h2>
 <p>Standaard uit. Je zet het zelf aan in de app (Instellingen › Skipped op het web) en logt in met Apple, zonder naam of e-mailadres. Dan gaan naar de server van Skipped (bij Cloudflare): je lessen (vak, begin, einde, lokaal, kleur), je vinkjes, taken, notities bij lessen en eigen items in de agenda ‘Skipped’. Voor je studietimer op je andere toestellen bewaart de server per toestel ook de codes waarmee Apple daar een Live Activity kan tonen, en stuurt hij de stand van een lopend studieblok door zonder die te bewaren. Je andere agenda's en de apps die je blokkeert gaan nooit naar de server. Met ‘Account verwijderen’ in de app of op app.skippedapp.app wis je alles meteen van de server. Alles staat in de <a href="privacy-web.html">uitleg over Skipped op het web</a>.</p>
 
+<h2 id="rooster">Rooster zoeken (optioneel)</h2>
+<p>Zoek je in de app het rooster van je school, dan opent Skipped de website van je school in een ingebouwde browser. Je logt daar in bij je school zelf: Skipped ziet je wachtwoord niet en bewaart geen cookies; als je de browser sluit, ben je weer uitgelogd. Op de pagina's zoekt Skipped alleen naar de link van je rooster. Die link bewaart de app bij je instellingen; hij gaat nooit naar onze server.</p>
+<p><b>Anoniem rapport, standaard uit.</b> Met de schakelaar ‘Help Skipped je school toevoegen’, of als je bij ‘Lukt niet’ voor ‘Stuur anoniem’ kiest (dan alleen voor die ene poging), stuurt de app na het zoeken één rapport naar de server van Skipped. Daarin staat: welke school je koos (of de naam die je zelf typte als ze niet in de lijst staat), de adressen van de pagina's die je bezocht zonder cijfers, codes of zoektermen (van een loginpagina alleen het domein), welke stappen je bereikte en na hoeveel seconden, van een pagina die niet laadde het domein en de foutcode, de vorm van de gevonden link (het domein, het pad met sterretjes in plaats van cijfers en codes, en de namen van de parameters, nooit hun waarden), de tekst van de knop als die een gewoon woord is zoals ‘Abonneren’, of het ophalen lukte, technische kenmerken van het antwoord (het type, de tijdzones, of er herhalingen in staan), hoeveel lessen erin stonden en over welke periode, en de versie van de app, het soort toestel (iOS, iPadOS of macOS met versie) en de taal.</p>
+<p>Er staat nooit in: de link zelf, je vakken, lokalen of uren, de inhoud van een pagina, je naam, je account of iets waarmee we je toestel herkennen. Het rapport krijgt een willekeurig nummer dat alleen voor die ene poging bestaat, en is dus niet aan jou gekoppeld; daardoor kunnen we het achteraf ook niet voor jou opzoeken of wissen. We bewaren je IP-adres niet. We gebruiken de rapporten alleen om te zien bij welke school het zoeken vastloopt en ze toe te voegen, en wissen ze na 90 dagen. Je zet de schakelaar op elk moment weer uit.</p>
+
 <h2>Wat de app bewaart</h2>
 <p>Je instellingen (gekozen agenda's, vakken, kleuren, taal), welke lessen je afgevinkt hebt, je eigen taken, je studiesessies en je keuzes voor de studeermodus. Notities die je bij een les schrijft: met een afvinklijst staan ze in de notities van die herinnering, anders in de opslag van de app. De rest staat in de opslag van de app op je toestel, en voor de widget en de Live Activity in een gedeelde opslag die alleen de app en haar widget kunnen lezen. Verwijder je de app, dan verdwijnt dit van dat toestel. Wat de app in Agenda of Herinneringen zette, blijft daar staan tot je het zelf verwijdert.</p>
 
@@ -72,7 +77,7 @@
 <ul>
 <li>Geen tracking, geen advertenties, geen analytics of crashrapportage van derden.</li>
 <li>Geen gegevens delen met of verkopen aan anderen. Alleen jij deelt iets, met de vrienden en groepen die je kiest.</li>
-<li>Geen verbinding met een server van ons, tenzij je inlogt voor vrienden en groepen of voor Skipped op het web. Verder is internet alleen nodig voor iCloud en voor je agenda-abonnementen.</li>
+<li>Geen verbinding met een server van ons, tenzij je inlogt voor vrienden en groepen of voor Skipped op het web, of het anonieme rapport bij ‘Rooster zoeken’ aanzet. Verder is internet alleen nodig voor iCloud, voor je agenda-abonnementen en voor de website van je school als je daar je rooster zoekt.</li>
 </ul>
 <p>Back-ups van je toestel via iCloud of je computer kunnen de gegevens van de app bevatten; die vallen onder het privacybeleid van Apple.</p>
 
@@ -80,7 +85,7 @@
 <p>Je kunt de toegang tot Agenda en Herinneringen op elk moment uitzetten in Instellingen › Privacy en beveiliging, meldingen in Instellingen › Meldingen › Skipped en de toegang tot Schermtijd in Instellingen › Schermtijd. Synchronisatie zet je uit in de app zelf.</p>
 
 <h2>Server: waar, hoe lang en je rechten</h2>
-<p>De server draait bij Cloudflare (Workers en D1), die de gegevens voor Skipped bewaart en verwerkt, mogelijk ook buiten de Europese Unie; zie het <a href="https://www.cloudflare.com/privacypolicy/">privacybeleid van Cloudflare</a>. Apple verwerkt het inloggen en de meldingen. Alles gaat versleuteld over het internet. We gebruiken de gegevens alleen om vrienden, groepen en Skipped op het web te laten werken, niet voor reclame of analyse, en delen ze met niemand anders. Ze blijven op de server tot je ze wist of je account verwijdert. Je hebt het recht om je gegevens in te zien, te laten verbeteren of te laten wissen, en om een klacht in te dienen bij de Gegevensbeschermingsautoriteit. Verantwoordelijke: Maxime Vanhove, maker van Skipped.</p>
+<p>De server draait bij Cloudflare (Workers en D1), die de gegevens voor Skipped bewaart en verwerkt, mogelijk ook buiten de Europese Unie; zie het <a href="https://www.cloudflare.com/privacypolicy/">privacybeleid van Cloudflare</a>. Apple verwerkt het inloggen en de meldingen. Alles gaat versleuteld over het internet. We gebruiken de gegevens alleen om vrienden, groepen en Skipped op het web te laten werken, niet voor reclame of analyse, en delen ze met niemand anders. Ze blijven op de server tot je ze wist of je account verwijdert. De anonieme rapporten van ‘Rooster zoeken’ staan daar los van: ze horen bij geen account en worden na 90 dagen gewist. Je hebt het recht om je gegevens in te zien, te laten verbeteren of te laten wissen, en om een klacht in te dienen bij de Gegevensbeschermingsautoriteit. Verantwoordelijke: Maxime Vanhove, maker van Skipped.</p>
 
 <h2>Kinderen</h2>
 <p>Zonder in te loggen vraagt Skipped niemand om persoonsgegevens. Inloggen voor vrienden, groepen of Skipped op het web is bedoeld voor wie 13 jaar of ouder is. Denk je dat een jonger kind toch een account heeft, mail ons en we wissen het.</p>
@@ -92,10 +97,10 @@
 <section id="en" class="card">
 <p class="lang">English</p>
 <h1>Privacy Policy</h1>
-<p class="meta">Skipped · last updated 13 November 2026</p>
+<p class="meta">Skipped · last updated 17 November 2026</p>
 
 <h2>In short</h2>
-<p>Skipped works without an account. As long as you don't sign in, everything the app reads or stores stays on your devices and, if you have sync turned on, in your own iCloud. There is no advertising, no tracking and no usage analytics.</p>
+<p>Skipped works without an account. As long as you don't sign in, everything the app reads or stores stays on your devices and, if you have sync turned on, in your own iCloud. There is no advertising and no tracking. The app does not measure how you use it; only if you turn it on yourself does it send an anonymous report when you look for your timetable (see ‘Finding your timetable’).</p>
 <p>Only if you sign in with Apple yourself does the Skipped server (at Cloudflare) store data linked to your account. That happens in two cases:</p>
 <ul>
 <li><b>Friends and groups</b>: your name in Skipped, who your friends and groups are, and only what you share per friend or group. See <a href="#friends">Friends and groups</a>.</li>
@@ -138,6 +143,11 @@
 <h2>Skipped on the web (optional)</h2>
 <p>Off by default. You turn it on yourself in the app (Settings › Skipped on the web) and sign in with Apple, without a name or email address. The Skipped server (at Cloudflare) then receives your classes (course, start, end, room, colour), your check-offs, tasks, class notes and own events in the ‘Skipped’ calendar. For your study timer on your other devices, the server also stores, per device, the codes Apple uses to show a Live Activity there, and it passes on the state of a running study session without storing it. Your other calendars and the apps you block never go to the server. ‘Delete account’ in the app or at app.skippedapp.app erases everything from the server right away. Details are in the <a href="privacy-web.html">explanation of Skipped on the web</a>.</p>
 
+<h2 id="timetable">Finding your timetable (optional)</h2>
+<p>When you look for your school's timetable in the app, Skipped opens your school's website in a built-in browser. You sign in with your school itself: Skipped does not see your password and keeps no cookies; when you close the browser you are signed out again. On those pages Skipped only looks for the link to your timetable. The app keeps that link with your settings; it never goes to our server.</p>
+<p><b>Anonymous report, off by default.</b> With the switch ‘Help Skipped add your school’, or if you choose ‘Send anonymously’ after ‘It's not working’ (then only for that one attempt), the app sends one report to the Skipped server after the search. It contains: which school you chose (or the name you typed if it is not in the list), the addresses of the pages you visited without digits, codes or search terms (for a sign-in page only the domain), which steps you reached and after how many seconds, for a page that failed to load its domain and the error code, the shape of the link that was found (the domain, the path with asterisks instead of digits and codes, and the names of the parameters, never their values), the text of the button if it is an ordinary word such as ‘Subscribe’, whether fetching worked, technical properties of the response (its type, the time zones, whether it contains repeating events), how many classes it contained and over which period, and the app version, the kind of device (iOS, iPadOS or macOS with version) and the language.</p>
+<p>It never contains: the link itself, your courses, rooms or times, the content of a page, your name, your account or anything that lets us recognise your device. The report gets a random number that exists only for that one attempt, so it is not linked to you; for that reason we also cannot look it up or erase it for you afterwards. We do not store your IP address. We use the reports only to see at which school the search gets stuck and to add it, and erase them after 90 days. You can turn the switch off again at any time.</p>
+
 <h2>What the app stores</h2>
 <p>Your settings (chosen calendars, courses, colours, language), which classes you checked off, your own tasks, your study sessions and your study mode choices. Notes you write for a class: with a check-off list they are stored in that reminder's notes, otherwise in the app's storage. Everything else is kept in the app's storage on your device, and for the widget and Live Activity in shared storage that only the app and its widget can read. Deleting the app removes it from that device. Anything the app added to Calendar or Reminders stays there until you delete it.</p>
 
@@ -145,7 +155,7 @@
 <ul>
 <li>No tracking, no ads, no third-party analytics or crash reporting.</li>
 <li>No sharing or selling of data. Only you share things, with the friends and groups you choose.</li>
-<li>No connection to any server of ours, unless you sign in for friends and groups or for Skipped on the web. Otherwise internet is only needed for iCloud and your calendar subscriptions.</li>
+<li>No connection to any server of ours, unless you sign in for friends and groups or for Skipped on the web, or turn on the anonymous report under ‘Finding your timetable’. Otherwise internet is only needed for iCloud, your calendar subscriptions and your school's website when you look for your timetable there.</li>
 </ul>
 <p>Backups of your device via iCloud or your computer may include the app's data; those are covered by Apple's privacy policy.</p>
 
@@ -153,7 +163,7 @@
 <p>You can turn off access to Calendars and Reminders at any time in Settings › Privacy &amp; Security, notifications in Settings › Notifications › Skipped, and Screen Time access in Settings › Screen Time. You turn sync off in the app itself.</p>
 
 <h2>Server: where, how long and your rights</h2>
-<p>The server runs on Cloudflare (Workers and D1), which stores and processes the data for Skipped, possibly also outside the European Union; see <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. Apple handles sign-in and notifications. Everything travels encrypted over the internet. We only use the data to make friends, groups and Skipped on the web work, not for ads or analytics, and share it with no one else. It stays on the server until you erase it or delete your account. You have the right to access, correct or erase your data, and to lodge a complaint with the Belgian Data Protection Authority. Controller: Maxime Vanhove, maker of Skipped.</p>
+<p>The server runs on Cloudflare (Workers and D1), which stores and processes the data for Skipped, possibly also outside the European Union; see <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. Apple handles sign-in and notifications. Everything travels encrypted over the internet. We only use the data to make friends, groups and Skipped on the web work, not for ads or analytics, and share it with no one else. It stays on the server until you erase it or delete your account. The anonymous reports from ‘Finding your timetable’ are separate: they belong to no account and are erased after 90 days. You have the right to access, correct or erase your data, and to lodge a complaint with the Belgian Data Protection Authority. Controller: Maxime Vanhove, maker of Skipped.</p>
 
 <h2>Children</h2>
 <p>Without signing in, Skipped does not ask anyone for personal data. Signing in for friends, groups or Skipped on the web is meant for people aged 13 or older. If you believe a younger child has an account, email us and we will delete it.</p>
