@@ -1,0 +1,20 @@
+# Korte links per kanaal: skippedapp.app/<pad> stuurt meteen (302) door naar de
+# App Store, met ct=<kanaal> zodat App Store Connect toont waar downloads vandaan komen
+# (App Analytics › Acquisition › Campaigns). Nieuw kanaal = één regel erbij.
+# De website zelf gebruikt ct=website%20link; de uitnodigingspagina ct=vrienden%20invite.
+#
+# pad          bestemming                                                                            code
+/tiktok        https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=tiktok&mt=8        302
+/insta         https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=instagram&mt=8     302
+/instagram     https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=instagram&mt=8     302
+/snap          https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=snapchat&mt=8      302
+/whatsapp      https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=whatsapp&mt=8      302
+/fb            https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=facebook&mt=8      302
+/yt            https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=youtube&mt=8       302
+/linkedin      https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=linkedin&mt=8      302
+/reddit        https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=reddit&mt=8        302
+/x             https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=x&mt=8             302
+/mail          https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=mail&mt=8          302
+/qr            https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=qr&mt=8            302
+/flyer         https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=flyer&mt=8         302
+/kring         https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&ct=kring&mt=8         302
