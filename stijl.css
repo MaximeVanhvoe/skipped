@@ -12,3 +12,11 @@ p,li{color:var(--ink)}
 a{color:var(--blue)}
 nav{display:flex;gap:14px;font-size:15px}
 .lang{color:var(--ink2);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 4px}
+/* balk bovenaan de losse pagina's: terug naar de homepage */
+.thuis{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:18px;padding:14px 16px 14px 14px;margin-bottom:20px;color:var(--ink);text-decoration:none;box-shadow:0 0 0 1px var(--line)}
+.thuis img{width:44px;height:44px;border-radius:22.5%;flex:none}
+.thuis span{display:flex;flex-direction:column;line-height:1.25;min-width:0;flex:1}
+.thuis b{font-size:17px}
+.thuis small{color:var(--ink2);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.thuis em{font-style:normal;background:#0066CC;color:#fff;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap;flex:none}
+.thuis:hover em{filter:brightness(1.08)}

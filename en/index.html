@@ -25,11 +25,21 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://skippedapp.app/#organization",
+      "name": "Skipped",
+      "url": "https://skippedapp.app/",
+      "logo": "https://skippedapp.app/img/icoon-groot.png",
+      "email": "support@skippedapp.app",
+      "sameAs": ["https://apps.apple.com/app/id6826845318", "https://www.tiktok.com/@skipped.app"]
+    },
+    {
       "@type": "WebSite",
       "@id": "https://skippedapp.app/#website",
       "url": "https://skippedapp.app/",
       "name": "Skipped",
-      "alternateName": ["Skipped: Class Tracker", "Skipped app"],
+      "alternateName": ["Skipped: Class Tracker", "Skipped app", "skippedapp.app"],
+      "publisher": {"@id": "https://skippedapp.app/#organization"},
       "inLanguage": ["nl", "en"]
     },
     {
@@ -38,6 +48,7 @@
       "name": "Skipped: Class Tracker",
       "alternateName": "Skipped",
       "url": "https://skippedapp.app/",
+      "publisher": {"@id": "https://skippedapp.app/#organization"},
       "description": "Free class tracker: keep track of the classes you attended and missed, with your schedule from Apple Calendar, To Do, a study mode and friends.",
       "image": "https://skippedapp.app/img/icoon-groot.png",
       "screenshot": "https://skippedapp.app/img/iphone-rooster.jpg",
@@ -349,7 +360,7 @@ footer a{color:#C7C7CC;text-decoration:none}
   <div class="kop gutter">
     <h1><span class="vh">Skipped: Class Tracker. </span>Every class counts.</h1>
     <a class="badge" href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8"><img src="/img/app-store-badge.svg" width="168" height="56" alt="Download"></a>
-    <p class="klein">Free class tracker for iPhone, iPad and Mac.</p>
+    <p class="klein">Skipped is a free class tracker for iPhone, iPad and Mac.</p>
   </div>
   <div class="trio gutter">
     <div class="dev mac"><img src="/img/hm-rooster.jpg" width="1600" height="1004" alt="Week schedule on the Mac"></div>
@@ -463,7 +474,7 @@ footer a{color:#C7C7CC;text-decoration:none}
 </main>
 
 <footer><div class="binnen gutter">
-  <a href="/support.html#en">Support</a><a href="/privacy.html#en">Privacy Policy</a><a href="/voorwaarden.html#en">Terms of Use</a><a href="https://app.skippedapp.app">Skipped on the web</a><a href="/en/class-attendance-tracker/">Class tracker</a><a href="/en/to-do-list/">To Do</a><a href="/en/exam-planner/">Exam planner</a><a href="/en/pomodoro-timer/">Study mode</a><a href="/en/study-with-friends/">Study with friends</a>
+  <a href="/support#en">Support</a><a href="/privacy#en">Privacy Policy</a><a href="/voorwaarden#en">Terms of Use</a><a href="https://app.skippedapp.app">Skipped on the web</a><a href="/en/class-attendance-tracker/">Class tracker</a><a href="/en/to-do-list/">To Do</a><a href="/en/exam-planner/">Exam planner</a><a href="/en/pomodoro-timer/">Study mode</a><a href="/en/study-with-friends/">Study with friends</a>
   <a href="/" hreflang="nl" lang="nl">Nederlands</a>
   <a href="https://apps.apple.com/app/apple-store/id6826845318?pt=129678265&amp;ct=website%20link&amp;mt=8">App Store</a>
   <span class="rechts">Skipped: Class Tracker</span>
